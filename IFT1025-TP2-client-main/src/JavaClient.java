@@ -1,6 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.ConnectException;
 import java.net.Socket;
 import java.util.Arrays;
@@ -11,28 +9,33 @@ public class JavaClient {
     public static void main(String[] args) {
 
         try {
-            Socket cS = new Socket("127.0.0.1",1337);
+            Socket client = new Socket("127.0.0.1",1337);
+            //ObjectInputStream objectInputStream = new ObjectInputStream(client.getInputStream());
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(client.getOutputStream());
 
-            OutputStreamWriter os = new OutputStreamWriter(cS.getOutputStream());
+            //objectInputStream = new OutputStreamWriter(cS.getOutputStream());
 
-            BufferedWriter bw = new BufferedWriter(os);
+            //BufferedWriter bw = new BufferedWriter(os);
 
-            Scanner sc = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
-            while(sc.hasNext()) {
-                String line = sc.nextLine();
+            while(scanner.hasNext()) {
+                String line = scanner.nextLine();
                 System.out.println("J'ai envoyé "+line );
-                bw.append(line+"\n");
-                bw.flush();
+                objectOutputStream.writeObject(line);
+                objectOutputStream.flush();
+                //bw.append(line+"\n");
+                //bw.flush();
                 if(line.equals("exit")) {
                     System.out.println("Au revoir.");
                     break;
                 }
             }
 
-            bw.close();
-            sc.close();
-            cS.close();
+            objectOutputStream.close();
+            //bw.close();
+            scanner.close();
+            client.close();
 
         } catch (ConnectException x) {
             System.out.println("Connexion impossible sur port 1337: pas de serveur.");
