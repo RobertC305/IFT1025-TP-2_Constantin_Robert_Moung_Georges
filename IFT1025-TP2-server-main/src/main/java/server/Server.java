@@ -1,14 +1,14 @@
 package server;
 
 import javafx.util.Pair;
+import server.models.Course;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Server {
 
@@ -92,7 +92,31 @@ public class Server {
      */
     public void handleLoadCourses(String arg) {
         // TODO: implémenter cette méthode
-        System.out.println("J'ai recu INSCRIRE");
+
+        //Affichage pour confirmer la reception de la commande
+        System.out.println("J'ai recu CHARGER");
+
+        //Lecture du document cours.txt
+        //À noter que le package Scanner a été ajouté
+
+        try {
+            Scanner reader = new Scanner(new File(".\\src\\main\\java\\server\\data\\cours.txt"));
+                ArrayList<Course> courses = new ArrayList<>();
+                while (reader.hasNext()) {
+                    String courseCode = reader.next();
+                    String courseName = reader.next();
+                    String session  = reader.next();
+                    courses.add(new Course(courseName,courseCode,session));
+                }
+                //Affichage des cours dans terminal serveur
+                System.out.println(courses);
+
+            reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichier non trouvé");
+        }
+
+
     }
 
     /**
@@ -102,7 +126,7 @@ public class Server {
      */
     public void handleRegistration() {
         // TODO: implémenter cette méthode
-        System.out.println("J'ai recu CHARGER");
+        System.out.println("J'ai recu INSCRIRE");
     }
 }
 
