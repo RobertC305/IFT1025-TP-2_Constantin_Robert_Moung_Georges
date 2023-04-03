@@ -95,6 +95,7 @@ public class Server {
 
         //Affichage pour confirmer la reception de la commande
         System.out.println("J'ai recu CHARGER");
+        System.out.println("Argument recu:"+ arg);
 
         //Lecture du document cours.txt
         //À noter que le package Scanner a été ajouté
@@ -108,10 +109,26 @@ public class Server {
                     String session  = reader.next();
                     courses.add(new Course(courseName,courseCode,session));
                 }
-                //Affichage des cours dans terminal serveur
-                System.out.println(courses);
-
             reader.close();
+
+                //Affichage des cours dans terminal serveur
+            System.out.println(courses);
+
+            // Voir exemple du prof. Le serveur demande de spécifier la session. On pourrait donc y mettre une
+            //alternative si le client ne spécifie par d'argument
+
+            //Filtrer selon la session mentionnée en argument
+            ArrayList<Course> filteredCourses = new ArrayList<>();
+            for (Course c: courses){
+                if (c.getSession().equals(arg)){
+                    filteredCourses.add(c);
+                }
+            }
+
+            //Affichage du résultat
+            System.out.println(filteredCourses);
+
+            //Envoyer le résultat au client avec un OutputStream
         } catch (FileNotFoundException e) {
             System.out.println("Fichier non trouvé");
         }
