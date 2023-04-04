@@ -115,7 +115,7 @@ public class Server {
             System.out.println(courses);
 
             // Voir exemple du prof. Le serveur demande de spécifier la session. On pourrait donc y mettre une
-            //alternative si le client ne spécifie par d'argument
+            //alternative si le client ne spécifie pas d'argument
 
             //Filtrer selon la session mentionnée en argument
             ArrayList<Course> filteredCourses = new ArrayList<>();
@@ -133,13 +133,16 @@ public class Server {
             objectOutputStream.writeObject(filteredCourses);
             objectOutputStream.flush();
 
+            //Attendre réponse si le client passe une nouvelle demande
+            listen();
+
         } catch (FileNotFoundException e) {
             System.out.println("Fichier non trouvé");
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-
-
     }
 
     /**
