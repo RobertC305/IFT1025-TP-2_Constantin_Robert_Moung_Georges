@@ -12,7 +12,7 @@ public class JavaClient {
             Socket client = new Socket("127.0.0.1",1337);
             //ObjectInputStream objectInputStream = new ObjectInputStream(client.getInputStream());
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(client.getOutputStream());
-
+            ObjectInputStream objectInputStream = new ObjectInputStream(client.getInputStream());
             //objectInputStream = new OutputStreamWriter(cS.getOutputStream());
 
             //BufferedWriter bw = new BufferedWriter(os);
@@ -23,6 +23,8 @@ public class JavaClient {
                 String line = scanner.nextLine();
                 System.out.println("J'ai envoyé "+line );
                 objectOutputStream.writeObject(line);
+                String linereceived = objectInputStream.readObject().toString();
+                System.out.println(linereceived);
                 objectOutputStream.flush();
                 //String lineReceived = objectInputStream.readObject().toString();
                 //System.out.println(lineReceived);
@@ -36,7 +38,7 @@ public class JavaClient {
 
 
             objectOutputStream.close();
-            //objectInputStream.close();
+            objectInputStream.close();
             //bw.close();
             scanner.close();
             client.close();
@@ -45,6 +47,8 @@ public class JavaClient {
             System.out.println("Connexion impossible sur port 1337: pas de serveur.");
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }
