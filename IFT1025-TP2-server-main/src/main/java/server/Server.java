@@ -129,8 +129,14 @@ public class Server {
             System.out.println(filteredCourses);
 
             //Envoyer le résultat au client avec un OutputStream
+            System.out.println("J'ai envoyé "+filteredCourses );
+            objectOutputStream.writeObject(filteredCourses);
+            objectOutputStream.flush();
+
         } catch (FileNotFoundException e) {
             System.out.println("Fichier non trouvé");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
 

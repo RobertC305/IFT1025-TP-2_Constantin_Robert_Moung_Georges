@@ -24,6 +24,8 @@ public class JavaClient {
                 System.out.println("J'ai envoyé "+line );
                 objectOutputStream.writeObject(line);
                 objectOutputStream.flush();
+                //String lineReceived = objectInputStream.readObject().toString();
+                //System.out.println(lineReceived);
                 //bw.append(line+"\n");
                 //bw.flush();
                 if(line.equals("exit")) {
@@ -32,7 +34,9 @@ public class JavaClient {
                 }
             }
 
+
             objectOutputStream.close();
+            //objectInputStream.close();
             //bw.close();
             scanner.close();
             client.close();
