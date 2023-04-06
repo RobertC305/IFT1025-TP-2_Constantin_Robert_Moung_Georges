@@ -35,28 +35,37 @@ public class Client {
      * @throws IOException
      */
     public void closeStream() throws IOException {
-        objectOutputStream.close();
-        objectInputStream.close();
+        this.objectOutputStream.close();
+        this.objectInputStream.close();
 
     }
 
+    /**
+     * Fermeture du client
+     * @throws IOException
+     */
+    public void disconnect() throws IOException {
+        client.close();
+    }
     /**
      * Envoie la commande "CHARGER session" au serveur et affiche les cours disponibles pour la session.
      * @param numSession (1=Automne, 2=Hiver, 3 = Ete)
      * @throws IOException
      */
     public void charger(String numSession) throws IOException, ClassNotFoundException {
-        this.openStream();
         String session;
         if (numSession.equals("1")) {
             session = "Automne";
             objectOutputStream.writeObject("CHARGER "+session);
+            //System.out.println("J'ai envoye CHARGER "+session);
         } else if (numSession.equals("2")) {
             session = "Hiver";
             objectOutputStream.writeObject("CHARGER "+session);
+            //System.out.println("J'ai envoye CHARGER "+session);
         } else if (numSession.equals("3")) {
             session = "Ete";
             objectOutputStream.writeObject("CHARGER "+session);
+            //System.out.println("J'ai envoye CHARGER "+session);
         } else {
                 IllegalArgumentException exception;
                 exception = new IllegalArgumentException("Le numéro de session doit être entre 1 ou 3 ");
