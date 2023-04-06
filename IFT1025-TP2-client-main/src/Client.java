@@ -45,13 +45,33 @@ public class Client {
      * @param numSession (1=Automne, 2=Hiver, 3 = Ete)
      * @throws IOException
      */
-    public void charger(int numSession) throws IOException, ClassNotFoundException {
+    public void charger(String numSession) throws IOException, ClassNotFoundException {
         this.openStream();
-        System.out.println("J'ai envoyé "+"Ete" );
-        objectOutputStream.writeObject("CHARGER Ete");
-        ArrayList<Course> objectReceived = (ArrayList<Course>) objectInputStream.readObject();
-        System.out.println(objectReceived);
-        System.out.println(objectReceived.get(0));
+        String session;
+        if (numSession.equals("1")) {
+            session = "Automne";
+            objectOutputStream.writeObject("CHARGER "+session);
+        } else if (numSession.equals("2")) {
+            session = "Hiver";
+            objectOutputStream.writeObject("CHARGER "+session);
+        } else if (numSession.equals("3")) {
+            session = "Ete";
+            objectOutputStream.writeObject("CHARGER "+session);
+        } else {
+                IllegalArgumentException exception;
+                exception = new IllegalArgumentException("Le numéro de session doit être entre 1 ou 3 ");
+                throw exception;
+        }
+
+        ArrayList<Course> filteredCourses = (ArrayList<Course>) objectInputStream.readObject();
+
+        System.out.println("Les cours offert pendant la session d'"+session.toLowerCase()+" sont:");
+
+        int i=1; //Compteur de cours
+        for (Course course : filteredCourses){
+            System.out.println(i+". "+course.getCode()+"\t"+course.getName());
+            i++;
+        }
         objectOutputStream.flush();
 
     }
