@@ -19,9 +19,11 @@ public class Main {
 
             String line = scanner.nextLine();
             ifExitDisconnect(line,client);
+
             //L'utilisateur peut rentrer un nombre de 1 à 3 pour afficher les cours
-            String[] instructions = line.split(" ");
-            String commande = instructions[0];
+            //String[] instructions = line.split(" ");
+            //String commande = instructions[0];
+            String commande=commande(line);
             if (commande.equals("1") | commande.equals("2") | commande.equals("3"))
             {
                 client.openStream();
@@ -30,9 +32,9 @@ public class Main {
 
                 line = scanner.nextLine();
                 ifExitDisconnect(line,client);
-                instructions = line.split(" ");
-                commande = instructions[0];
-
+                //instructions = line.split(" ");
+                //commande = instructions[0];
+                commande=commande(line);
 
 
                 //Changer pour un while pour que la boucle soit lue tant que l'option 1 est choisie
@@ -41,15 +43,17 @@ public class Main {
                         messageChoixCours();
                         line = scanner.nextLine();
                         ifExitDisconnect(line, client);
-                        instructions = line.split(" ");
-                        commande = instructions[0];
+                        //instructions = line.split(" ");
+                        //commande = instructions[0];
+                        commande=commande(line);
 
                         client.charger(commande);
                         messageChoixApresCharger();
                         line = scanner.nextLine();
                         ifExitDisconnect(line, client);
-                        instructions = line.split(" ");
-                        commande = instructions[0];
+                        //instructions = line.split(" ");
+                        //commande = instructions[0];
+                        commande=commande(line);
 
                         if (commande.equals("1") != true) {
                             break;
@@ -91,6 +95,7 @@ public class Main {
 
 
             } else {
+
                 System.out.println("Invalide, veuillez sélectionner un nombre entre 1 et 3");
 
             }
@@ -109,6 +114,13 @@ public class Main {
 
     }
 
+    /**
+     * Cette méthode se déconnecte du client en paramètre et quitte le programme java si la ligne en paramètre est
+     * égale à "exit".
+     * @param line Line à examiner
+     * @param client Le client duquel il faut se déconnecter
+     * @throws IOException
+     */
         public static void ifExitDisconnect(String line, Client client) throws IOException {
             if (line.equals("exit")) {
                 System.out.println("Au revoir.");
@@ -116,6 +128,13 @@ public class Main {
                 System.exit(0);
             }
         }
+
+        public static String commande(String line) {
+            String[] instructions = line.split(" ");
+            String commande = instructions[0];
+            return commande;
+        }
+
 
     /**
      * La méthode suivante imprime un texte prédéfini pour afficher les sessions
