@@ -2,6 +2,7 @@ package server;
 
 import javafx.util.Pair;
 import server.models.Course;
+import server.models.RegistrationForm;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -153,6 +154,55 @@ public class Server {
     public void handleRegistration() {
         // TODO: implémenter cette méthode
         System.out.println("J'ai recu INSCRIRE");
+
+        boolean registrationSucces = true;
+
+        try {
+            listen();
+            //Réception de l'objet de type RegistrationForm
+            //FileInputStream fileInputStream = new FileInputStream("data\\inscription.txt");
+            //objectInputStream = new ObjectInputStream(fileInputStream);
+            //String objectInput = (String) objectInputStream.readObject();
+            RegistrationForm registrationForm = (RegistrationForm) this.objectInputStream.readObject();
+
+
+            //Extraction de l'objet RegistrationForm de l'Object String recu en input
+
+            System.out.println(registrationForm.toString());
+
+            //Enregistrement des données du RegistrationForm sur le fichier inscription.txt
+            FileWriter fileWriter = new FileWriter("data\\inscription.txt");
+            BufferedWriter writer = new BufferedWriter(fileWriter);
+            String registrationString = registrationForm.getCourse().getSession() + "\t" + registrationForm.getCourse().getCode() + "\t" +
+                    registrationForm.getMatricule() + "\t" + registrationForm.getPrenom() + "\t" + registrationForm.getNom() + "\t" + registrationForm.getEmail();
+            writer.append(registrationString);
+            writer.close();
+
+        } catch (FileNotFoundException e){
+            registrationSucces = false;
+            System.out.println("Fichier inscription.txt non trouvé");
+        } catch (IOException e) {
+            registrationSucces = false;
+            //throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            registrationSucces = false;
+            //throw new RuntimeException(e);
+        }
+
+        //Envoie de la confirmation de l'inscription au client
+        try {
+            if (registrationSucces == true) {
+                objectOutputStream.writeObject("L'inscription a réussi.");
+                objectOutputStream.flush();
+            }
+            else {
+                objectOutputStream.writeObject("L'inscription a échouer.");
+                objectOutputStream.flush();
+            }
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+
     }
 }
 

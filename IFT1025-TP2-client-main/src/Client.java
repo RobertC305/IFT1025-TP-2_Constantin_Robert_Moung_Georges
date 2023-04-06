@@ -96,7 +96,8 @@ public class Client {
 
     public void inscrire(RegistrationForm registrationForm) throws IOException {
         objectOutputStream.writeObject("INSCRIRE "+registrationForm);
-
+        //objectOutputStream.flush();
+        //objectOutputStream.writeObject(registrationForm);
 
     }
 
