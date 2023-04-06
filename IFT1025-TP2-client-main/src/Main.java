@@ -1,3 +1,6 @@
+import server.models.Course;
+import server.models.RegistrationForm;
+
 import java.io.*;
 import java.net.ConnectException;
 import java.net.Socket;
@@ -55,8 +58,35 @@ public class Main {
                     }
                 }
                 if (commande.equals("2")){
-                    System.out.println("Je vais excécuter la commande 2!");
+                    System.out.println(client.getListCoursesConsulted());
+                    System.out.println("Je vais exécuter la commande INSCRIRE!");
+                    System.out.print("Veuillez saisir votre prénom: ");
+                    String prenom = scanner.nextLine();
+                    System.out.print("Veuillez saisir votre nom: ");
+                    String nom = scanner.nextLine();
+                    System.out.print("Veuillez saisir votre email: ");
+                    String email = scanner.nextLine();
+                    System.out.print("Veuillez saisir votre matricule: ");
+                    String matricule = scanner.nextLine();
+                    System.out.print("Veuillez saisir le code du cours: ");
+                    String code = scanner.nextLine();
+                    Course coursInscription = null;
+                    boolean coursValide = false;
+                    for (Course course: client.getListCoursesConsulted()) {
+                        if (course.getCode().equals(code)){
+                            coursInscription = course;
+                            coursValide = true;
+                        }
+                    }
+                    if (coursValide==false){
+                        System.out.println("Cours invalide");
+                    }
 
+                    //
+
+                    RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,coursInscription);
+                    System.out.println(registrationForm);
+                    client.inscrire(registrationForm);
                 }
 
 

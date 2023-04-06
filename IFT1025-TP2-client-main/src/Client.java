@@ -1,4 +1,5 @@
 import server.models.Course;
+import server.models.RegistrationForm;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,6 +13,8 @@ public class Client {
     private ObjectInputStream objectInputStream;
     private ObjectOutputStream objectOutputStream;
 
+    private ArrayList<Course> listCoursesConsulted = new ArrayList<>();
+
     /**
      * Constructeur
      * @param client Socket pour une connection au seveur
@@ -19,6 +22,10 @@ public class Client {
     public Client(Socket client) {
         this.client = client;
 
+    }
+
+    public ArrayList<Course> getListCoursesConsulted() {
+        return listCoursesConsulted;
     }
 
     /**
@@ -73,6 +80,7 @@ public class Client {
         }
 
         ArrayList<Course> filteredCourses = (ArrayList<Course>) objectInputStream.readObject();
+        this.listCoursesConsulted.addAll(filteredCourses);
 
         System.out.println("Les cours offert pendant la session d'"+session.toLowerCase()+" sont:");
 
@@ -82,6 +90,13 @@ public class Client {
             i++;
         }
         objectOutputStream.flush();
+
+    }
+
+
+    public void inscrire(RegistrationForm registrationForm) throws IOException {
+        objectOutputStream.writeObject("INSCRIRE "+registrationForm);
+
 
     }
 
