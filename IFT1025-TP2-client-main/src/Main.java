@@ -62,8 +62,7 @@ public class Main {
                     }
                 }
                 if (commande.equals("2")){
-                    System.out.println(client.getListCoursesConsulted());
-                    System.out.println("Je vais exécuter la commande INSCRIRE!");
+                    //System.out.println(client.getListCoursesConsulted());
                     System.out.print("Veuillez saisir votre prénom: ");
                     String prenom = scanner.nextLine();
                     System.out.print("Veuillez saisir votre nom: ");
