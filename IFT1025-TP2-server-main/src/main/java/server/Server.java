@@ -170,28 +170,46 @@ public class Server {
                     registrationForm.getMatricule() + "\t" + registrationForm.getPrenom() + "\t" + registrationForm.getNom() + "\t" + registrationForm.getEmail()+"\n";
             writer.append(registrationString);
             writer.close();
-
-            //Envoie de la confirmation de l'inscription au client
-            if (registrationSucces == true) {
-                objectOutputStream.writeObject("Félicitations! Inscription réussie de "+registrationForm.getPrenom()+" au cours "+registrationForm.getCourse().getCode());
-                objectOutputStream.flush();
-            }
-            else {
-                objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
-                objectOutputStream.flush();
-            }
+            handleRegistrationSuccess(registrationForm);
 
         } catch (FileNotFoundException e){
-            registrationSucces = false;
             System.out.println("Fichier inscription.txt non trouvé");
+            handleRegistrationFailure();
         } catch (IOException e) {
-            registrationSucces = false;
-            //throw new RuntimeException(e);
+            System.out.println("Erreur lors de la réception ou de l'envoie de données stream");
+            handleRegistrationFailure();
         } catch (ClassNotFoundException e) {
-            registrationSucces = false;
-            //throw new RuntimeException(e);
+            System.out.println("Classe recu en stream est introuvable");
+            handleRegistrationFailure();
         }
+    }
 
+    /**
+     * La méthode envoie un message au client pour confirmer la réussite de l'inscription
+     * @param registrationForm le formulaire d'inscription du client
+     * @throws IOException
+     */
+    public void handleRegistrationSuccess(RegistrationForm registrationForm){
+        try {
+            objectOutputStream.writeObject("Félicitations! Inscription réussie de " + registrationForm.getPrenom() + " au cours " + registrationForm.getCourse().getCode());
+            objectOutputStream.flush();
+        }catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    /**
+     * La méthode envoie un message au client pour l'informer de l'échec de son inscription
+     * @throws IOException
+     */
+    public void handleRegistrationFailure(){
+        try {
+            objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
+            objectOutputStream.flush();
+        }catch(IOException e){
+            throw new RuntimeException(e);
+        }
     }
 }
 
