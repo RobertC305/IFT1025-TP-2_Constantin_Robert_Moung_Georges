@@ -94,10 +94,13 @@ public class Client {
     }
 
 
-    public void inscrire(RegistrationForm registrationForm) throws IOException {
+    public void inscrire(RegistrationForm registrationForm) throws IOException, ClassNotFoundException {
         objectOutputStream.writeObject("INSCRIRE "+registrationForm);
-        //objectOutputStream.flush();
-        //objectOutputStream.writeObject(registrationForm);
+        objectOutputStream.flush();
+        objectOutputStream.writeObject(registrationForm);
+
+        String confirmation = objectInputStream.readObject().toString();
+        System.out.println(confirmation);
 
     }
 

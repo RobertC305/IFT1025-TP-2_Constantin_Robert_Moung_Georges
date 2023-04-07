@@ -90,7 +90,6 @@ public class Main {
                     //Reconnection du client pour la deuxième commande
                     //client.openStream();
                     RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,coursInscription);
-                    System.out.println(registrationForm);
                     client.inscrire(registrationForm);
                 }
 

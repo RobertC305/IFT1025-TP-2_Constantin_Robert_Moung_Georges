@@ -95,7 +95,7 @@ public class Server {
         // TODO: implémenter cette méthode
 
         //Affichage pour confirmer la reception de la commande
-        System.out.println("J'ai recu CHARGER");
+        System.out.println("J'ai recu l'instruction: CHARGER");
         System.out.println("Argument recu:"+ arg);
 
         //Lecture du document cours.txt
@@ -113,7 +113,7 @@ public class Server {
             reader.close();
 
                 //Affichage des cours dans terminal serveur
-            System.out.println(courses);
+            //System.out.println(courses);
 
             // Voir exemple du prof. Le serveur demande de spécifier la session. On pourrait donc y mettre une
             //alternative si le client ne spécifie pas d'argument
@@ -127,7 +127,7 @@ public class Server {
             }
 
             //Affichage du résultat
-            System.out.println(filteredCourses);
+            //System.out.println(filteredCourses);
 
             //Envoyer le résultat au client avec un OutputStream
             System.out.println("J'ai envoyé "+filteredCourses );
@@ -153,30 +153,33 @@ public class Server {
      */
     public void handleRegistration() {
         // TODO: implémenter cette méthode
-        System.out.println("J'ai recu INSCRIRE");
+        System.out.println("J'ai recu l'instruction: INSCRIRE");
 
         boolean registrationSucces = true;
 
+
         try {
-            listen();
+
             //Réception de l'objet de type RegistrationForm
-            //FileInputStream fileInputStream = new FileInputStream("data\\inscription.txt");
-            //objectInputStream = new ObjectInputStream(fileInputStream);
-            //String objectInput = (String) objectInputStream.readObject();
             RegistrationForm registrationForm = (RegistrationForm) this.objectInputStream.readObject();
 
-
-            //Extraction de l'objet RegistrationForm de l'Object String recu en input
-
-            System.out.println(registrationForm.toString());
-
             //Enregistrement des données du RegistrationForm sur le fichier inscription.txt
-            FileWriter fileWriter = new FileWriter("data\\inscription.txt");
+            FileWriter fileWriter = new FileWriter(".\\src\\main\\java\\server\\data\\inscription.txt",true);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             String registrationString = registrationForm.getCourse().getSession() + "\t" + registrationForm.getCourse().getCode() + "\t" +
-                    registrationForm.getMatricule() + "\t" + registrationForm.getPrenom() + "\t" + registrationForm.getNom() + "\t" + registrationForm.getEmail();
+                    registrationForm.getMatricule() + "\t" + registrationForm.getPrenom() + "\t" + registrationForm.getNom() + "\t" + registrationForm.getEmail()+"\n";
             writer.append(registrationString);
             writer.close();
+
+            //Envoie de la confirmation de l'inscription au client
+            if (registrationSucces == true) {
+                objectOutputStream.writeObject("Félicitations! Inscription réussie de "+registrationForm.getPrenom()+" au cours "+registrationForm.getCourse().getCode());
+                objectOutputStream.flush();
+            }
+            else {
+                objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
+                objectOutputStream.flush();
+            }
 
         } catch (FileNotFoundException e){
             registrationSucces = false;
@@ -187,20 +190,6 @@ public class Server {
         } catch (ClassNotFoundException e) {
             registrationSucces = false;
             //throw new RuntimeException(e);
-        }
-
-        //Envoie de la confirmation de l'inscription au client
-        try {
-            if (registrationSucces == true) {
-                objectOutputStream.writeObject("L'inscription a réussi.");
-                objectOutputStream.flush();
-            }
-            else {
-                objectOutputStream.writeObject("L'inscription a échouer.");
-                objectOutputStream.flush();
-            }
-        }catch (IOException e){
-            throw new RuntimeException(e);
         }
 
     }
