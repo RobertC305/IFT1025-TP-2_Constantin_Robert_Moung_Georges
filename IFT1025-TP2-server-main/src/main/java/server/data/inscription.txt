@@ -3,3 +3,5 @@ Automne	IFT1015	12345678	Joe	Mama	JoeMama@hotmail.com
 Hiver	IFT2125	34567813	Joe	Fresh	JoeFresh@umontreal.ca
 Automne	IFT1227	12345679	Jean	de La Fontaine	JeanDLFontaine69@fable.fr
 Hiver	IFT2125	345676787	John	Cena	JohnCena22@umontreal.ca
+Hiver	IFT2125	12345	John	Wick	JohnWick@Chapter4.com
+Hiver	IFT2125	444555666	Speedy	Gonzales	SpeedyGonzales@LooneyTunes,com
