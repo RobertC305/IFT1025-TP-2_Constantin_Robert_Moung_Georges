@@ -24,6 +24,9 @@ public class Main {
             //String[] instructions = line.split(" ");
             //String commande = instructions[0];
             String commande=commande(line);
+
+
+
             if (commande.equals("1") | commande.equals("2") | commande.equals("3"))
             {
                 client.openStream();
@@ -84,18 +87,14 @@ public class Main {
                     if (coursValide==false){
                         System.out.println("Cours invalide");
                     }
-                    //Déconnection du client apres la première commande
+                    //Deconnection du client apres la première commande
                     //client.disconnect();
 
                     //Reconnection du client pour la deuxième commande
-                    //client.openStream();
                     RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,coursInscription);
                     client.inscrire(registrationForm);
                 }
-
-
             } else {
-
                 System.out.println("Invalide, veuillez sélectionner un nombre entre 1 et 3");
 
             }
