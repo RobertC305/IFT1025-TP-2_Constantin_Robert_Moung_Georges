@@ -139,10 +139,11 @@ public class Server {
 
         } catch (FileNotFoundException e) {
             System.out.println("Fichier non trouvé");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (RuntimeException e) {
+            //Aucune intervention requise, car le client s'est déconnecté. Il faut juste poursuivre la methode run()
+        } catch (IOException e) {
+            //Aucune intervention requise, car le client s'est déconnecté. Il faut juste poursuivre la methode run()
         }
     }
 

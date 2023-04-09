@@ -5,3 +5,5 @@ Automne	IFT1227	12345679	Jean	de La Fontaine	JeanDLFontaine69@fable.fr
 Hiver	IFT2125	345676787	John	Cena	JohnCena22@umontreal.ca
 Hiver	IFT2125	12345	John	Wick	JohnWick@Chapter4.com
 Hiver	IFT2125	444555666	Speedy	Gonzales	SpeedyGonzales@LooneyTunes,com
+Hiver	IFT1025	123456	Taylor	Swift	TaylorSwift@Anti-Hero.com
+Hiver	IFT2125	345	Los	Angeles	LosAngeles@Jenaiplusdidess.com

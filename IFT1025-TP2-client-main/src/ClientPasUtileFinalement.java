@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class Client {
+public class ClientPasUtileFinalement {
 
     private Socket client;
     private ObjectInputStream objectInputStream;
@@ -19,7 +19,7 @@ public class Client {
      * Constructeur
      * @param client Socket pour une connection au seveur
      */
-    public Client(Socket client) {
+    public ClientPasUtileFinalement(Socket client) {
         this.client = client;
 
     }
