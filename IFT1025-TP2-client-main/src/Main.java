@@ -139,9 +139,8 @@ public class Main {
     }
 
     /**
-     * Cette méthode quitte le programme java si la ligne en paramètre est
-     * égale à "exit".
-     * @param line
+     * Cette méthode quitte le programme java si la ligne en paramètre est "exit"
+     * @param line La ligne qui sera comparée à "exit"
      */
         public static void ifExitDisconnect(String line) {
             if (line.equals("exit")) {
@@ -151,9 +150,9 @@ public class Main {
         }
 
     /**
-     * Cette méthode prend le premier élément de la ligne de commande et le retounre
+     * Cette méthode prend le premier élément de la ligne de commande avant un espace(" ") et le retourne
      * @param line Ligne de commande pour laquelle la méthode prends le premier élément
-     * @return
+     * @return Le premier élément avant un espace(" ") sous forme de String
      */
     public static String commande(String line) {
             String[] instructions = line.split(" ");
@@ -164,10 +163,10 @@ public class Main {
     /**
      * La commande suivante test si la commande entrée en paramètre est valide selon les valeurs acceptées. Si c'est le cas,
      * aucune action n'est effectuée, sinon une nouvelle commande est demandée tant que c'est invalide,
-     * @param commande Commande a tester
-     * @param acceptedValues Liste des valeurs acceptées
-     * @param scanner Scanner auquel redemander une commande, si nécéssaire
-     * @return
+     * @param commande Commande à tester avec les valeurs acceptées
+     * @param acceptedValues Liste des valeurs acceptées sous forme String[]
+     * @param scanner Scanner auquel redemander une commande, si nécessaire
+     * @return Retourne la commande initiale si elle est valide, sinon, retourne la prochaine commande valide entrée dans le scanner.
      */
         public static String redemanderSiInvalide(String commande, String[] acceptedValues, Scanner scanner ){
             boolean invalide = true;
@@ -189,8 +188,8 @@ public class Main {
 
     /**
      * La methode valide si l'email a un format valide.
-     * @param email
-     * @return
+     * @param email Email a tester
+     * @return "true" si valide, "false" sinon
      */
     public static boolean emailValide(String email){
             //String regex = "\s+@\s+.\s+"; //Exemple prof
@@ -202,8 +201,8 @@ public class Main {
 
     /**
      * La methode valide si la matricule a un format valide.
-     * @param matricule
-     * @return
+     * @param matricule matricule à tester (String)
+     * @return "true" si valide, "false" sinon
      */
     public static boolean matriculeValide(String matricule){
             try {
@@ -216,9 +215,9 @@ public class Main {
 
     /**
      * Cette méthode valide que le code fourni en paramètre est dans la liste de cours fournie en paramètre.
-     * @param codeToValidate
-     * @param CourseList
-     * @return
+     * @param codeToValidate Code à valider (String)
+     * @param CourseList Liste de cours valides (ArrayList<Course>)
+     * @return "true" si valide, "false" sinon
      */
         public static boolean coursCodeValide(String codeToValidate, ArrayList<Course> CourseList){
             for (Course course: CourseList) {
@@ -229,7 +228,7 @@ public class Main {
             return false;
         }
     /**
-     * La méthode suivante imprime un texte prédéfini pour afficher les sessions
+     * La méthode suivante imprime un texte prédéfini pour afficher les sessions.
      */
     public static void messageChoixCours(){
         System.out.println("Veuillez choisir la session pour laquelle vous voulez consulter la liste des cours:");
@@ -242,7 +241,7 @@ public class Main {
 
     /**
      * La méthode suivante imprime un texte prédéfini pour afficher les choix de commandes après avoir affiché les
-     * cours disponibles dans une session
+     * cours disponibles dans une session.
      */
     public static void messageChoixApresCharger(){
         System.out.println("Choix:");
@@ -252,7 +251,8 @@ public class Main {
     }
 
     /**
-     * Envoie la commande "CHARGER session" au serveur et affiche les cours disponibles pour la session.
+     * Cette méthode se connecte au serveur localhost sur le port 1337, envoie la commande "CHARGER session" au serveur,
+     * àaffiche les cours disponibles pour la session reçu du serveur et se déconnecte par la suite.
      * @param numSession (1=Automne, 2=Hiver, 3 = Ete)
      * @throws IOException
      */
@@ -297,8 +297,9 @@ public class Main {
     }
 
     /**
-     * Cette methode envoie un objet RegistrationForm au serveur.
-     * @param registrationForm
+     * Cette methode envoie un objet RegistrationForm au serveur localhost sur le port 1337. Il se connecte au serveur.
+     * envoie la commande et se déconnecte.
+     * @param registrationForm Objet de format RegistrationForm à envoyer au serveur.
      * @throws IOException
      * @throws ClassNotFoundException
      */

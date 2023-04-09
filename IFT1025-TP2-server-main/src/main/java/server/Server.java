@@ -112,12 +112,6 @@ public class Server {
                 }
             reader.close();
 
-                //Affichage des cours dans terminal serveur
-            //System.out.println(courses);
-
-            // Voir exemple du prof. Le serveur demande de spécifier la session. On pourrait donc y mettre une
-            //alternative si le client ne spécifie pas d'argument
-
             //Filtrer selon la session mentionnée en argument
             ArrayList<Course> filteredCourses = new ArrayList<>();
             for (Course c: courses){
@@ -126,20 +120,14 @@ public class Server {
                 }
             }
 
-            //Affichage du résultat
-            //System.out.println(filteredCourses);
-
             //Envoyer le résultat au client avec un OutputStream
             System.out.println("J'ai envoyé "+filteredCourses );
             objectOutputStream.writeObject(filteredCourses);
             objectOutputStream.flush();
-
-            //Attendre réponse si le client passe une nouvelle demande
-            listen();
+            
 
         } catch (FileNotFoundException e) {
             System.out.println("Fichier non trouvé");
-        } catch (ClassNotFoundException e) {
         } catch (RuntimeException e) {
             //Aucune intervention requise, car le client s'est déconnecté. Il faut juste poursuivre la methode run()
         } catch (IOException e) {
@@ -180,7 +168,7 @@ public class Server {
             System.out.println("Erreur lors de la réception ou de l'envoie de données stream");
             handleRegistrationFailure();
         } catch (ClassNotFoundException e) {
-            System.out.println("Classe recu en stream est introuvable");
+            System.out.println("Classe reçue en stream est introuvable");
             handleRegistrationFailure();
         }
     }
