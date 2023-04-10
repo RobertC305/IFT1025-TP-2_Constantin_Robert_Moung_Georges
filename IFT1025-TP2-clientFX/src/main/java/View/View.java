@@ -1,9 +1,11 @@
 package View;
 
+import Model.Course;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -68,10 +70,12 @@ public class View extends HBox {
 		this.registrationVBox.setSpacing(30);
 
 		//Course VBox
+		this.courseCodeTableCol.setCellValueFactory(new PropertyValueFactory<Course,String>("code"));
+		this.courseNameTableCol.setCellValueFactory(new PropertyValueFactory<Course,String>("name"));
 		this.courseTable.getColumns().addAll(courseCodeTableCol,courseNameTableCol);
 
 		this.sessionComboBox.getItems().addAll("Automne,Hiver,Ete");
-		this.sessionComboBox.setPromptText("Session");
+		this.sessionComboBox.setValue("Session");
 
 		this.courseSessionHBox.getChildren().add(sessionComboBox);
 		this.courseSessionHBox.getChildren().add(sessionConfirmationButton);
@@ -111,11 +115,16 @@ public class View extends HBox {
 	public TextField getMatriculeTextField() {return matriculeTextField;}
 	public Button getRegistrationConfirmationButton() {return registrationConfirmationButton;}
 
+
 	public void clearRegistrationForm(){
 		this.prenomTextField.setText("");
 		this.nomTextField.setText("");
 		this.emailTextField.setText("");
 		this.matriculeTextField.setText("");
+	}
+
+	public void clearSessionComboBox(){
+		this.sessionComboBox.setValue(null);
 	}
 
 }
