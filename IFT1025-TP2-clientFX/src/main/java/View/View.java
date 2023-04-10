@@ -3,9 +3,7 @@ package View;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.geometry.VerticalDirection;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -14,8 +12,6 @@ import javafx.scene.text.Text;
 /*
  * Dans cette classe nous definissons les éléments graphiques de notre
  * application.
- * Notez que cette classe est completement independante de toute definition 
- * de comportement.
  */
 public class View extends HBox {
 
@@ -100,14 +96,26 @@ public class View extends HBox {
 
 	}
 
-//	public Button getIncButton() {		return this.inc;}
+	//Course VBox
+	public TableView getCourseTable(){return this.courseTable;}
+	public TableColumn getCourseCodeTableCol() {return courseCodeTableCol;}
+	public TableColumn getCourseNameTableCol() {return courseNameTableCol;}
+	public ComboBox getSessionComboBox() {return sessionComboBox;}
+	public Button getSessionConfirmationButton() {return sessionConfirmationButton;}
 
-//	public Button getDecButton() {return this.dec;	}
 
-//	public Button getDivButton() {return this.div;	}
+	//Registration VBox
+	public TextField getPrenomTextField() {return prenomTextField;}
+	public TextField getNomTextField() {return nomTextField;}
+	public TextField getEmailTextField() {return emailTextField;}
+	public TextField getMatriculeTextField() {return matriculeTextField;}
+	public Button getRegistrationConfirmationButton() {return registrationConfirmationButton;}
 
-//	public Button getDubButton() {		return this.dub;}
-
-//	public void updateText(String nouvelleValeur) {		this.textValeur.setText(String.valueOf(nouvelleValeur));}
+	public void clearRegistrationForm(){
+		this.prenomTextField.setText("");
+		this.nomTextField.setText("");
+		this.emailTextField.setText("");
+		this.matriculeTextField.setText("");
+	}
 
 }
