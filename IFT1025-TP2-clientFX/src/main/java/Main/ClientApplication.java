@@ -1,3 +1,5 @@
+package Main;
+
 import Controller.Controller;
 import Model.Client;
 import Model.Course;
