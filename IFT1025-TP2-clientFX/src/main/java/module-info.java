@@ -4,5 +4,5 @@ module com.example.ift1025tp2clientfx {
 
 
     opens com.example.ift1025tp2clientfx to javafx.fxml;
-    exports com.example.ift1025tp2clientfx;
+    exports Main;
 }

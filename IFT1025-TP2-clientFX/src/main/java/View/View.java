@@ -74,7 +74,9 @@ public class View extends HBox {
 		this.courseNameTableCol.setCellValueFactory(new PropertyValueFactory<Course,String>("name"));
 		this.courseTable.getColumns().addAll(courseCodeTableCol,courseNameTableCol);
 
-		this.sessionComboBox.getItems().addAll("Automne,Hiver,Ete");
+		this.sessionComboBox.getItems().addAll("Automne","Hiver","Ete");
+
+
 		this.sessionComboBox.setValue("Session");
 
 		this.courseSessionHBox.getChildren().add(sessionComboBox);
