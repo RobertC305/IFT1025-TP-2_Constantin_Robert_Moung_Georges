@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+package main.java.ClientApplication;
 public class ClientApplication extends Application {
 
     @Override
