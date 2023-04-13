@@ -3,7 +3,6 @@ package server.models;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ConnectException;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,6 +17,7 @@ public class Client {
 
     private static ArrayList<Course> listCoursesConsulted = new ArrayList<>();
 
+
     /**
      * Constructeur
      */
@@ -25,13 +25,13 @@ public class Client {
             this.client = new Socket();
     }
 
+
     /**
      * @return tableau qui contient la liste de cours de la session choisie.
      */
     public ArrayList<Course> getListCoursesConsulted() {
         return listCoursesConsulted;
     }
-
 
     /**
      * Cette méthode prend le premier élément de la ligne de commande avant un espace(" ") et le retourne

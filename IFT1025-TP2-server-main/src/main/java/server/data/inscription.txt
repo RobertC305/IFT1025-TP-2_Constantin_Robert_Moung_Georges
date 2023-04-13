@@ -8,3 +8,4 @@ Hiver	IFT2125	444555666	Speedy	Gonzales	SpeedyGonzales@LooneyTunes,com
 Hiver	IFT1025	123456	Taylor	Swift	TaylorSwift@Anti-Hero.com
 Hiver	IFT2125	345	Los	Angeles	LosAngeles@Jenaiplusdidess.com
 Automne	IFT2255	1234567	James	Bob	James@hotmail.fr
+Automne	IFT1015	12345678	Bob	Lennon	bobLennon@Hotmail.fr
