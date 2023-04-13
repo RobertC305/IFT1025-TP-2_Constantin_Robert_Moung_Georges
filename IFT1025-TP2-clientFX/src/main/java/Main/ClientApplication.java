@@ -21,7 +21,7 @@ public class ClientApplication extends Application {
         //Course course = new Course();
         //Controller controller = new Controller();
 
-        Scene scene = new Scene(view, 500, 600);
+        Scene scene = new Scene(view, 600, 400);
 
         stage.setScene(scene);
         stage.setTitle("Application Client");
