@@ -14,3 +14,5 @@ Hiver	IFT1025	1234	Test	Testson	test@test.us
 Hiver	IFT2125	12345	Jean-Claude		test@test
 Automne	IFT2255	12345			test@test.com
 Automne	IFT2255	12345			test@test
+Automne	IFT2255	1234	test	test	test@test
+Hiver	IFT2125	1	test	testetsxt	test@trest

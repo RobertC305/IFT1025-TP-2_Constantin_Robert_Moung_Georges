@@ -52,24 +52,20 @@ public class Controller {
 		Course course = selectedCourse;
 
 		//-----Ajout RSC
-		if ( prenom == " " | nom == "" ) {
-			messageErreur("Erreur","Veuillez entrer votre prénom et votre nom.");
+		if ( prenom.equals("") || nom.equals("") ) {
+			messageErreur("Erreur","Veuillez entrer votre prénom et votre nom.","");
 			return;
-
 		}
 
 		if (this.client.emailValide(email) != true) {
-			//messageErreur("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.");
-			messageErreur(prenom,nom);
+			messageErreur("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.","");
 			return;
 		}
 
 		if (this.client.matriculeValide(matricule) == false) {
-			messageErreur("Erreur","La matricule entrée est invalide! Veuillez réessayer.");
+			messageErreur("Erreur","La matricule entrée est invalide! Veuillez réessayer.","");
 			return;
 		}
-
-
 		//------------
 
 		RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,course);
@@ -128,10 +124,17 @@ public class Controller {
 
 	//Ajout RSC ------
 
-	public static void messageErreur(String title, String headerText){
+	/**
+	 * Cette méthode prend affiche un message d'erreur du style "Warning".
+	 * @param title Titre du message d'erreur
+	 * @param headerText Header du messager d'erreur
+	 * @param contentText Contenu du message d'erreur
+	 */
+	public static void messageErreur(String title, String headerText, String contentText){
 		Alert alert = new Alert(Alert.AlertType.WARNING);
 		alert.setTitle(title);
 		alert.setHeaderText(headerText);
+		alert.setContentText(contentText);
 		alert.showAndWait();
 	}
 	//-------
