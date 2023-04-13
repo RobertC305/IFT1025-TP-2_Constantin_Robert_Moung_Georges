@@ -59,7 +59,8 @@ public class Controller {
 			messageAlerte("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.");
 			return;
 		} else if (this.client.matriculeValide(matricule) == false) {
-			messageAlerte("Erreur","La matricule entrée est invalide! Veuillez réessayer.");
+			messageAlerte("Erreur","La matricule entrée est invalide!"+
+					"\nCela doit être un nombre de 8 caractères.\nVeuillez réessayer.");
 			return;
 		} else if (course == null) {
 			messageAlerte("Erreur","Veuillez sélectionner un cours.");
