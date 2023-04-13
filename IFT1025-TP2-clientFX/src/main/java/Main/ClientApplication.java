@@ -1,5 +1,4 @@
 package Main;
-//package main.java.ClientApplication;
 
 import Controller.Controller;
 import server.models.Client;
@@ -8,6 +7,9 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * C'est la classe Main de l'application.
+ */
 public class ClientApplication extends Application {
 
     @Override

@@ -23,146 +23,15 @@ public class Client {
      */
     public Client() {
             this.client = new Socket();
-
     }
 
+    /**
+     * @return tableau qui contient la liste de cours de la session choisie.
+     */
     public ArrayList<Course> getListCoursesConsulted() {
         return listCoursesConsulted;
     }
 
-    public static void main(String[] args) {
-
-        try {
-            System.out.println("*** Bienvenue au portail d'inscription de cours de l'UDEM ***");
-            Scanner scanner = new Scanner(System.in);
-            messageChoixCours();
-
-
-            String line = scanner.nextLine();
-            ifExitDisconnect(line);
-
-            //L'utilisateur peut rentrer un nombre de 1 à 3 pour afficher les cours
-            String commande = redemanderSiInvalide(commande(line), new String[]{"1", "2", "3","exit"},scanner);
-
-            ifExitDisconnect(line);
-
-            if (commande.equals("1") | commande.equals("2") | commande.equals("3"))
-            {
-                charger(commande);
-                messageChoixApresCharger();
-
-                line = scanner.nextLine();
-                commande = redemanderSiInvalide(commande(line), new String[]{"1", "2","exit"},scanner);
-                ifExitDisconnect(commande);
-
-                //Changer pour un while pour que la boucle soit lue tant que l'option 1 est choisie
-                if (commande.equals("1")) {
-                    while (true) {
-                        messageChoixCours();
-                        line = scanner.nextLine();
-                        commande = redemanderSiInvalide(commande(line), new String[]{"1", "2", "3","exit"},scanner);
-                        ifExitDisconnect(commande);
-
-                        //client.charger(commande);
-                        charger(commande);
-
-
-                        messageChoixApresCharger();
-                        line = scanner.nextLine();
-                        commande = redemanderSiInvalide(commande(line), new String[]{"1", "2","exit"},scanner);
-                        ifExitDisconnect(commande);
-
-                        if (commande.equals("1") != true) {
-                            break;
-                        }
-
-                    }
-                }
-                if (commande.equals("2")){
-                    System.out.print("Veuillez saisir votre prénom: ");
-                    String prenom = scanner.nextLine();
-                    ifExitDisconnect(prenom);
-
-                    System.out.print("Veuillez saisir votre nom: ");
-                    String nom = scanner.nextLine();
-                    ifExitDisconnect(nom);
-
-                    System.out.print("Veuillez saisir votre email: ");
-                    String email = scanner.nextLine();
-                    ifExitDisconnect(email);
-                    //Vérifier si valide
-                    while (emailValide(email) != true) {
-                        System.out.println("Email invalide");
-                        System.out.print("Veuillez saisir votre email: ");
-                        email = scanner.nextLine();
-                        ifExitDisconnect(email);
-                    }
-
-                    System.out.print("Veuillez saisir votre matricule: ");
-                    String matricule = scanner.nextLine();
-                    ifExitDisconnect(matricule);
-                    //Vérifier si valide
-                    while (matriculeValide(matricule) == false) {
-                        System.out.println("Matricule invalide");
-                        System.out.print("Veuillez saisir votre matricule: ");
-                        matricule = scanner.nextLine();
-                        ifExitDisconnect(matricule);
-                    }
-
-                    System.out.print("Veuillez saisir le code du cours: ");
-                    String code = scanner.nextLine();
-                    ifExitDisconnect(code);
-                    //Vérifier si valide
-
-                    while(coursCodeValide(code,listCoursesConsulted) != true){
-                        System.out.println("Code invalide");
-                        System.out.print("Veuillez saisir le code du cours: ");
-                        code = scanner.nextLine();
-                        ifExitDisconnect(code);
-
-
-                    }
-
-                    Course coursInscription = null;
-                    for (Course course: listCoursesConsulted) {
-                        if (course.getCode().equals(code)){
-                            coursInscription = course;
-                            break;
-                        }
-                    }
-
-                    //Reconnection du client pour la deuxième commande
-
-                    RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,coursInscription);
-                    inscrire(registrationForm);
-
-                }
-            }
-
-
-            scanner.close();
-
-
-        } catch (ConnectException x) {
-            System.out.println("Connexion impossible sur port 1337: pas de serveur.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    /**
-     * Cette méthode quitte le programme java si la ligne en paramètre est "exit"
-     * @param line La ligne qui sera comparée à "exit"
-     */
-    public static void ifExitDisconnect(String line) {
-        if (line.equals("exit")) {
-            System.out.println("Au revoir.");
-            System.exit(0);
-        }
-    }
 
     /**
      * Cette méthode prend le premier élément de la ligne de commande avant un espace(" ") et le retourne
@@ -242,28 +111,6 @@ public class Client {
         }
         return false;
     }
-    /**
-     * La méthode suivante imprime un texte prédéfini pour afficher les sessions.
-     */
-    public static void messageChoixCours(){
-        System.out.println("Veuillez choisir la session pour laquelle vous voulez consulter la liste des cours:");
-        System.out.println("1. Automne");
-        System.out.println("2. Hiver");
-        System.out.println("3. Ete");
-        System.out.print("Choix: ");
-
-    }
-
-    /**
-     * La méthode suivante imprime un texte prédéfini pour afficher les choix de commandes après avoir affiché les
-     * cours disponibles dans une session.
-     */
-    public static void messageChoixApresCharger(){
-        System.out.println("Choix:");
-        System.out.println("1. Consulter les cours offerts pour une autre session");
-        System.out.println("2. Inscription à un cours");
-        System.out.print("Choix: ");
-    }
 
     /**
      * Cette méthode se connecte au serveur localhost sur le port 1337, envoie la commande "CHARGER session" au serveur,
@@ -276,28 +123,6 @@ public class Client {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
         objectOutputStream.writeObject("CHARGER "+session);
-
-        /*
-        if (numSession.equals("1")) {
-            session = "Automne";
-            objectOutputStream.writeObject("CHARGER "+session);
-            //System.out.println("J'ai envoye CHARGER "+session);
-        } else if (numSession.equals("2")) {
-            session = "Hiver";
-            objectOutputStream.writeObject("CHARGER "+session);
-            //System.out.println("J'ai envoye CHARGER "+session);
-        } else if (numSession.equals("3")) {
-            session = "Ete";
-            objectOutputStream.writeObject("CHARGER "+session);
-            //System.out.println("J'ai envoye CHARGER "+session);
-        } else {
-            IllegalArgumentException exception;
-            exception = new IllegalArgumentException("Le numéro de session doit être entre 1 ou 3 ");
-            throw exception;
-        }
-
-         */
-
 
         ArrayList<Course> filteredCourses = (ArrayList<Course>) objectInputStream.readObject();
         listCoursesConsulted.clear();
