@@ -4,17 +4,11 @@ import server.models.Client;
 import server.models.Course;
 import server.models.RegistrationForm;
 import View.View;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
-
 import java.io.IOException;
 
-/*
- * Cette classe lie le modele avec la vue. 
- * À noter qu'elle ne connaît ni de detailles d'implementation 
- * du comportement, ni de detailles de structuration du GUI.
- * 
+/**
+ * Cette classe est le controlleur de l'application.
  */
 public class Controller {
 
@@ -27,30 +21,28 @@ public class Controller {
 		this.client = client;
 		this.view = view;
 
-		 /*
-		 * La definition du comportement de chaque handler 
-		 * est mise dans sa propre méthode auxiliaire. Il pourrait être même 
-		 * dans sa propre classe entière: ne niveau de decouplage
-		 * depend de la complexité de l'application
-		 */
-
 		//Affiche les cours de la session choisi dans la table
+		//lorsque le bouton 'charger' est cliqué.
 		this.view.getSessionConfirmationButton().setOnAction((action) -> {
 			this.chargerSession();
 		});
 
-		//Retourne l'objet sélectionner dans la table de liste de cours
+		//Retourne le cours sélectionner dans la table de liste de cours.
 		this.view.getCourseTable().getSelectionModel().selectedIndexProperty().addListener((num) -> {
 			this.selectedCourse = this.coursChoisi();
 		});
 
 		//Envoie les données d'inscription sous forme d'objet RegistrationForm au serveur
+		//lorsque le bouton "envoyé" est cliqué.
 		this.view.getRegistrationConfirmationButton().setOnAction((action) -> {
 			this.inscription();
 		});
 
 	}
 
+	/**
+	 * Envoie les données d'inscription sous forme d'objet RegistrationForm au serveur
+	 */
 	private void inscription(){
 		String prenom = this.view.getPrenomTextField().getText().toString();
 		String nom = this.view.getNomTextField().getText().toString();
@@ -67,6 +59,10 @@ public class Controller {
 		catch (ClassNotFoundException e){throw new RuntimeException(e);}
 
 	}
+
+	/**
+	 * Affiche les cours de la session choisi dans la table
+	 */
 	private void chargerSession(){
 		this.view.clearTable();
 		try{
@@ -82,6 +78,10 @@ public class Controller {
 		catch (ClassNotFoundException e){throw new RuntimeException(e);}
 	}
 
+	/**
+	 * Retourne le cours sélectionner dans la table de liste de cours
+	 * @return Course: retourne un objet de type Course.
+	 */
 	private Course coursChoisi() {
 
 		TableView table = this.view.getCourseTable();
@@ -95,6 +95,9 @@ public class Controller {
 		return course;
 	}
 
+	/**
+	 * Réinitialise l'application.
+	 */
 	private void clearApplicationForm(){
 		this.view.clearRegistrationForm();
 		this.view.clearSessionComboBox();

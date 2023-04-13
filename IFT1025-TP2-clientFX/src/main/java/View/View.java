@@ -15,8 +15,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
- * Dans cette classe nous definissons les éléments graphiques de notre
- * application.
+ * Cette classe est la vue de notre application.
  */
 public class View extends HBox {
 
