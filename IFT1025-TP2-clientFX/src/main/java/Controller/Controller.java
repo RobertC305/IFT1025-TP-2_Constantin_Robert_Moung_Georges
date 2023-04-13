@@ -1,5 +1,6 @@
 package Controller;
 
+import javafx.scene.control.Alert;
 import server.models.Client;
 import server.models.Course;
 import server.models.RegistrationForm;
@@ -49,6 +50,27 @@ public class Controller {
 		String matricule = this.view.getMatriculeTextField().getText().toString();
 		String email = this.view.getEmailTextField().getText().toString();
 		Course course = selectedCourse;
+
+		//-----Ajout RSC
+		if ( prenom == " " | nom == "" ) {
+			messageErreur("Erreur","Veuillez entrer votre prénom et votre nom.");
+			return;
+
+		}
+
+		if (this.client.emailValide(email) != true) {
+			//messageErreur("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.");
+			messageErreur(prenom,nom);
+			return;
+		}
+
+		if (this.client.matriculeValide(matricule) == false) {
+			messageErreur("Erreur","La matricule entrée est invalide! Veuillez réessayer.");
+			return;
+		}
+
+
+		//------------
 
 		RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,course);
 		try{
@@ -103,5 +125,15 @@ public class Controller {
 		this.view.clearSessionComboBox();
 		this.view.clearTable();
 	}
+
+	//Ajout RSC ------
+
+	public static void messageErreur(String title, String headerText){
+		Alert alert = new Alert(Alert.AlertType.WARNING);
+		alert.setTitle(title);
+		alert.setHeaderText(headerText);
+		alert.showAndWait();
+	}
+	//-------
 
 }
