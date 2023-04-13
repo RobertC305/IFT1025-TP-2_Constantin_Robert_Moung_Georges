@@ -51,22 +51,20 @@ public class Controller {
 		String email = this.view.getEmailTextField().getText().toString();
 		Course course = selectedCourse;
 
-		//-----Ajout RSC
+		//Vérifier si les valeurs entrées sont valides
 		if ( prenom.equals("") || nom.equals("") ) {
-			messageErreur("Erreur","Veuillez entrer votre prénom et votre nom.","");
+			messageAlerte("Erreur","Veuillez entrer votre prénom et votre nom.");
+			return;
+		} else if (this.client.emailValide(email) != true) {
+			messageAlerte("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.");
+			return;
+		} else if (this.client.matriculeValide(matricule) == false) {
+			messageAlerte("Erreur","La matricule entrée est invalide! Veuillez réessayer.");
+			return;
+		} else if (course == null) {
+			messageAlerte("Erreur","Veuillez sélectionner un cours.");
 			return;
 		}
-
-		if (this.client.emailValide(email) != true) {
-			messageErreur("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.","");
-			return;
-		}
-
-		if (this.client.matriculeValide(matricule) == false) {
-			messageErreur("Erreur","La matricule entrée est invalide! Veuillez réessayer.","");
-			return;
-		}
-		//------------
 
 		RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,course);
 		try{
@@ -75,6 +73,9 @@ public class Controller {
 		}
 		catch (IOException e){throw new RuntimeException(e);}
 		catch (ClassNotFoundException e){throw new RuntimeException(e);}
+
+		//Affiche un message de confirmation de l'inscription
+		messageAlerte("Inscription",Client.getReponseServeur());
 
 	}
 
@@ -122,21 +123,19 @@ public class Controller {
 		this.view.clearTable();
 	}
 
-	//Ajout RSC ------
 
 	/**
-	 * Cette méthode prend affiche un message d'erreur du style "Warning".
+	 * Cette méthode prend affiche un message d'erreur du style "Information".
 	 * @param title Titre du message d'erreur
-	 * @param headerText Header du messager d'erreur
 	 * @param contentText Contenu du message d'erreur
 	 */
-	public static void messageErreur(String title, String headerText, String contentText){
-		Alert alert = new Alert(Alert.AlertType.WARNING);
+	public static void messageAlerte(String title, String contentText){
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle(title);
-		alert.setHeaderText(headerText);
+		alert.setHeaderText(null);
 		alert.setContentText(contentText);
 		alert.showAndWait();
 	}
-	//-------
+
 
 }

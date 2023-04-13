@@ -68,13 +68,30 @@ public class Main {
                     String prenom = scanner.nextLine();
                     ifExitDisconnect(prenom);
 
+                    //Vérifier si vide
+                    while (prenom.equals("")) {
+                        System.out.println("Ce champs ne peut pas être vide!");
+                        System.out.print("Veuillez saisir votre prénom: ");
+                        prenom = scanner.nextLine();
+                        ifExitDisconnect(prenom);
+                    }
+
                     System.out.print("Veuillez saisir votre nom: ");
                     String nom = scanner.nextLine();
                     ifExitDisconnect(nom);
 
+                    //Vérifier si vide
+                    while (nom.equals("")) {
+                        System.out.println("Ce champs ne peut pas être vide!");
+                        System.out.print("Veuillez saisir votre nom: ");
+                        nom = scanner.nextLine();
+                        ifExitDisconnect(nom);
+                    }
+
                     System.out.print("Veuillez saisir votre email: ");
                     String email = scanner.nextLine();
                     ifExitDisconnect(email);
+
                     //Vérifier si valide
                     while (emailValide(email) != true) {
                         System.out.println("Email invalide");
@@ -161,12 +178,13 @@ public class Main {
         }
 
     /**
-     * La commande suivante test si la commande entrée en paramètre est valide selon les valeurs acceptées. Si c'est le cas,
-     * aucune action n'est effectuée, sinon une nouvelle commande est demandée tant que c'est invalide,
+     * La commande suivante test si la commande entrée en paramètre est valide selon les valeurs acceptées. Si c'est
+     * le cas, aucune action n'est effectuée, sinon une nouvelle commande est demandée tant que c'est invalide,
      * @param commande Commande à tester avec les valeurs acceptées
      * @param acceptedValues Liste des valeurs acceptées sous forme String[]
      * @param scanner Scanner auquel redemander une commande, si nécessaire
-     * @return Retourne la commande initiale si elle est valide, sinon, retourne la prochaine commande valide entrée dans le scanner.
+     * @return Retourne la commande initiale si elle est valide, sinon,
+     * retourne la prochaine commande valide entrée dans le scanner.
      */
         public static String redemanderSiInvalide(String commande, String[] acceptedValues, Scanner scanner ){
             boolean invalide = true;
@@ -192,8 +210,9 @@ public class Main {
      * @return "true" si valide, "false" sinon
      */
     public static boolean emailValide(String email){
-            //String regex = "\s+@\s+.\s+"; //Exemple prof
-            String regex = "^(.+)@(.+)$"; //Lui il marche
+            //Regex fourni sur Piazza par Nicholas Cooper
+            //pour la question "Format e-mail et cours dans le fichier cours.txt"
+            String regex = "[^@\\s]+@[^@\\s]+\\.\\w+";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(email);
             return matcher.matches();
@@ -205,7 +224,11 @@ public class Main {
      * @return "true" si valide, "false" sinon
      */
     public static boolean matriculeValide(String matricule){
-            try {
+        if (matricule.length() != 8){
+            return false;
+        }
+        //Vérifier si la matricule est un nombre
+        try {
                 int matriculeInt = Integer.parseInt(matricule);
                 return true;
             } catch (NumberFormatException e){
@@ -281,6 +304,7 @@ public class Main {
         }
 
         ArrayList<Course> filteredCourses = (ArrayList<Course>) objectInputStream.readObject();
+        listCoursesConsulted.clear();
         listCoursesConsulted.addAll(filteredCourses);
 
         System.out.println("Les cours offert pendant la session d'"+session.toLowerCase()+" sont:");

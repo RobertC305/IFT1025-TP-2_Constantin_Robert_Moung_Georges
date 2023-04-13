@@ -16,6 +16,7 @@ public class Client {
     private static String ipAdress = "127.0.0.1";
 
     private static ArrayList<Course> listCoursesConsulted = new ArrayList<>();
+    private static String reponseServeur = "";
 
 
     /**
@@ -25,6 +26,7 @@ public class Client {
             this.client = new Socket();
     }
 
+    //Début des Getters
 
     /**
      * @return tableau qui contient la liste de cours de la session choisie.
@@ -32,6 +34,16 @@ public class Client {
     public ArrayList<Course> getListCoursesConsulted() {
         return listCoursesConsulted;
     }
+
+    /**
+     * @return Chaîne de caractères qui contient la réponse du serveur
+     */
+    public static String getReponseServeur() {
+        return reponseServeur;
+    }
+
+    // Fin des Getters
+
 
     /**
      * Cette méthode prend le premier élément de la ligne de commande avant un espace(" ") et le retourne
@@ -45,12 +57,13 @@ public class Client {
     }
 
     /**
-     * La commande suivante test si la commande entrée en paramètre est valide selon les valeurs acceptées. Si c'est le cas,
-     * aucune action n'est effectuée, sinon une nouvelle commande est demandée tant que c'est invalide,
+     * La commande suivante test si la commande entrée en paramètre est valide selon les valeurs acceptées.
+     * Si c'est le cas, aucune action n'est effectuée, sinon une nouvelle commande est demandée tant que c'est invalide,
      * @param commande Commande à tester avec les valeurs acceptées
      * @param acceptedValues Liste des valeurs acceptées sous forme String[]
      * @param scanner Scanner auquel redemander une commande, si nécessaire
-     * @return Retourne la commande initiale si elle est valide, sinon, retourne la prochaine commande valide entrée dans le scanner.
+     * @return Retourne la commande initiale si elle est valide, sinon,
+     * retourne la prochaine commande valide entrée dans le scanner.
      */
     public static String redemanderSiInvalide(String commande, String[] acceptedValues, Scanner scanner ){
         boolean invalide = true;
@@ -76,8 +89,9 @@ public class Client {
      * @return "true" si valide, "false" sinon
      */
     public static boolean emailValide(String email){
-        //String regex = "\s+@\s+.\s+"; //Exemple prof
-        String regex = "^(.+)@(.+)$"; //Lui il marche
+        //Regex fourni sur Piazza par Nicholas Cooper
+        //pour la question "Format e-mail et cours dans le fichier cours.txt"
+        String regex = "[^@\\s]+@[^@\\s]+\\.\\w+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
@@ -89,6 +103,10 @@ public class Client {
      * @return "true" si valide, "false" sinon
      */
     public static boolean matriculeValide(String matricule){
+        if (matricule.length() != 8){
+            return false;
+        }
+        //Vérifier si la matricule est un nombre
         try {
             int matriculeInt = Integer.parseInt(matricule);
             return true;
@@ -148,10 +166,11 @@ public class Client {
         objectOutputStream.flush();
         objectOutputStream.writeObject(registrationForm);
 
-        String confirmation = objectInputStream.readObject().toString();
-        System.out.println(confirmation);
+        reponseServeur = objectInputStream.readObject().toString();
+        System.out.println(reponseServeur);
         objectOutputStream.close();
         objectInputStream.close();
+
     }
 
 }

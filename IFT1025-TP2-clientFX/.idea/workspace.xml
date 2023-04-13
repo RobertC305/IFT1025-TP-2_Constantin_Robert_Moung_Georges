@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef19bb0-7a8c-4a05-8493-8ad769086083" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ift1025tp2clientfx/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ift1025tp2clientfx/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/models/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/src/main/java/server/data/inscription.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/src/main/java/server/data/inscription.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

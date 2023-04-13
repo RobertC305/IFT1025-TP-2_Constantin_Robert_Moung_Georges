@@ -16,3 +16,9 @@ Automne	IFT2255	12345			test@test.com
 Automne	IFT2255	12345			test@test
 Automne	IFT2255	1234	test	test	test@test
 Hiver	IFT2125	1	test	testetsxt	test@trest
+Ete	IFT2256	12	Test	Test2	test@test
+Hiver	IFT2125	134	Robert	C	cccc@yahoo.com
+Automne	IFT1227	12345678	dd	ff	dd@yahoo.ca
+Hiver	IFT2125	12345678	Jack	Sparrow	Jack@umontreeal.ca
+Automne	IFT2255	12345678	John	Cena	John@uqam.ca
+Hiver	IFT2125	12345678	Test	Tesson	test@test.ca
