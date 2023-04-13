@@ -1,8 +1,8 @@
 package Controller;
 
-import Model.Client;
-import Model.Course;
-import Model.RegistrationForm;
+import server.models.Client;
+import server.models.Course;
+import server.models.RegistrationForm;
 import View.View;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +20,6 @@ public class Controller {
 
 	private Client client;
 	private View view;
-	final ObservableList<Course> loadedCourses = FXCollections.observableArrayList();
 	private Course selectedCourse = null;
 
 	public Controller(Client client, View view) {
@@ -53,10 +52,10 @@ public class Controller {
 	}
 
 	private void inscription(){
-		String prenom = this.view.getPrenomTextField().toString();
-		String nom = this.view.getNomTextField().toString();
-		String matricule = this.view.getMatriculeTextField().toString();
-		String email = this.view.getEmailTextField().toString();
+		String prenom = this.view.getPrenomTextField().getText().toString();
+		String nom = this.view.getNomTextField().getText().toString();
+		String matricule = this.view.getMatriculeTextField().getText().toString();
+		String email = this.view.getEmailTextField().getText().toString();
 		Course course = selectedCourse;
 
 		RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,course);
@@ -69,13 +68,13 @@ public class Controller {
 
 	}
 	private void chargerSession(){
-		this.loadedCourses.clear();
+		this.view.clearTable();
 		try{
 			Client.charger(this.view.getSessionComboBox().getValue().toString());
 
 			//Ajout des cours dans la liste de cours observables
 			for(Course course : this.client.getListCoursesConsulted()){
-			this.loadedCourses.add(course);
+			this.view.addLoadedCourse(course);
 			}
 
 		}
@@ -83,19 +82,23 @@ public class Controller {
 		catch (ClassNotFoundException e){throw new RuntimeException(e);}
 	}
 
-	private Course coursChoisi(){
+	private Course coursChoisi() {
+
 		TableView table = this.view.getCourseTable();
 		Course course = null;
 
-		int index = table.getSelectionModel().selectedIndexProperty().get();
-		course = (Course) table.getItems().get(index);
+		if (table.getItems().isEmpty() == false) {
+			int index = table.getSelectionModel().selectedIndexProperty().get();
+			course = (Course) table.getItems().get(index);
+		}
+
 		return course;
 	}
 
 	private void clearApplicationForm(){
 		this.view.clearRegistrationForm();
 		this.view.clearSessionComboBox();
-		this.loadedCourses.clear();
+		this.view.clearTable();
 	}
 
 }

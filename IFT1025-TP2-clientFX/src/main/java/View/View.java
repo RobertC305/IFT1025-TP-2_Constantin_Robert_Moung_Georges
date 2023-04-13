@@ -1,18 +1,18 @@
 package View;
 
-import Model.Course;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import server.models.Course;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 
 /*
  * Dans cette classe nous definissons les éléments graphiques de notre
@@ -49,32 +49,17 @@ public class View extends HBox {
 	private Button registrationConfirmationButton = new Button("envoyer");
 	private ComboBox sessionComboBox = new ComboBox();
 	private  Button sessionConfirmationButton = new Button("charger");
-	private TableView courseTable = new TableView();
-	private TableColumn courseCodeTableCol = new TableColumn("Code");
-	private TableColumn courseNameTableCol = new TableColumn("Cours");
+
+
+	private TableView<Course> courseTable = new TableView();
+	private TableColumn<Course, String> courseCodeTableCol = new TableColumn<Course, String>("Code");
+	private TableColumn<Course, String> courseNameTableCol = new TableColumn<Course, String>("Cours");
+
+	private ObservableList<Course> loadedCourses = FXCollections.observableArrayList();
 
 	private HBox courseSessionHBox = new HBox();
 
 	public View() {
-
-		/*
-		this.registrationGridPane.setAlignment(Pos.CENTER);
-		this.registrationGridPane.setHgap(15);
-		this.registrationGridPane.setVgap(20);
-		this.registrationGridPane.setPadding(new Insets(25,25,25,25));
-
-		this.registrationGridPane.add(prenomLabel,0,0);
-		this.registrationGridPane.add(prenomTextField,0,1);
-
-		this.registrationGridPane.add(nomLabel,1,0);
-		this.registrationGridPane.add(nomTextField,1,1);
-
-		this.registrationGridPane.add(emailLabel,2,0);
-		this.registrationGridPane.add(emailTextField,2,1);
-
-		this.registrationGridPane.add(matriculeLabel,3,0);
-		this.registrationGridPane.add(matriculeTextField,3,1);
-		 */
 		this.registrationTitle.setFont(titlesFont);
 		this.prenomHBOx.getChildren().addAll(this.prenomLabel,this.prenomTextField);
 		this.nomHBOx.getChildren().addAll(this.nomLabel,this.nomTextField);
@@ -107,7 +92,7 @@ public class View extends HBox {
 		this.courseNameTableCol.setCellValueFactory(new PropertyValueFactory<Course,String>("name"));
 		this.courseTable.getColumns().add(courseCodeTableCol);
 		this.courseTable.getColumns().add(courseNameTableCol);
-		this.courseTable.setEditable(false);
+		this.courseTable.setItems(loadedCourses);
 
 		this.sessionComboBox.getItems().addAll("Automne","Hiver","Ete");
 		this.sessionComboBox.setValue("Session");
@@ -139,8 +124,6 @@ public class View extends HBox {
 
 	//Course VBox
 	public TableView getCourseTable(){return this.courseTable;}
-	public TableColumn getCourseCodeTableCol() {return courseCodeTableCol;}
-	public TableColumn getCourseNameTableCol() {return courseNameTableCol;}
 	public ComboBox getSessionComboBox() {return sessionComboBox;}
 	public Button getSessionConfirmationButton() {return sessionConfirmationButton;}
 
@@ -161,7 +144,13 @@ public class View extends HBox {
 	}
 
 	public void clearSessionComboBox(){
-		this.sessionComboBox.setValue(null);
+		this.sessionComboBox.setValue("Session");
+	}
+	public void clearTable(){
+		this.loadedCourses.clear();
+	}
+	public void addLoadedCourse(Course course){
+		this.loadedCourses.add(course);
 	}
 
 }

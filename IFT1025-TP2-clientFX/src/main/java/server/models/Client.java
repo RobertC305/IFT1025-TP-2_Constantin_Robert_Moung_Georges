@@ -1,4 +1,4 @@
-package Model;
+package server.models;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -20,10 +20,9 @@ public class Client {
 
     /**
      * Constructeur
-     * @param client Socket pour une connection au seveur
      */
-    public Client(Socket client) {
-        this.client = client;
+    public Client() {
+            this.client = new Socket();
 
     }
 
@@ -269,15 +268,16 @@ public class Client {
     /**
      * Cette méthode se connecte au serveur localhost sur le port 1337, envoie la commande "CHARGER session" au serveur,
      * àaffiche les cours disponibles pour la session reçu du serveur et se déconnecte par la suite.
-     * @param numSession (1=Automne, 2=Hiver, 3 = Ete)
+     * @param session (1=Automne, 2=Hiver, 3 = Ete)
      * @throws IOException
      */
-    public static void charger(String numSession) throws IOException, ClassNotFoundException {
+    public static void charger(String session) throws IOException, ClassNotFoundException {
         Socket socket = new Socket("127.0.0.1", 1337);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
+        objectOutputStream.writeObject("CHARGER "+session);
 
-        String session;
+        /*
         if (numSession.equals("1")) {
             session = "Automne";
             objectOutputStream.writeObject("CHARGER "+session);
@@ -296,16 +296,12 @@ public class Client {
             throw exception;
         }
 
+         */
+
+
         ArrayList<Course> filteredCourses = (ArrayList<Course>) objectInputStream.readObject();
+        listCoursesConsulted.clear();
         listCoursesConsulted.addAll(filteredCourses);
-
-        System.out.println("Les cours offert pendant la session d'"+session.toLowerCase()+" sont:");
-
-        int i=1; //Compteur de cours
-        for (Course course : filteredCourses){
-            System.out.println(i+". "+course.getCode()+"\t"+course.getName());
-            i++;
-        }
         objectOutputStream.flush();
 
         objectOutputStream.close();

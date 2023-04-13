@@ -7,3 +7,4 @@ Hiver	IFT2125	12345	John	Wick	JohnWick@Chapter4.com
 Hiver	IFT2125	444555666	Speedy	Gonzales	SpeedyGonzales@LooneyTunes,com
 Hiver	IFT1025	123456	Taylor	Swift	TaylorSwift@Anti-Hero.com
 Hiver	IFT2125	345	Los	Angeles	LosAngeles@Jenaiplusdidess.com
+Automne	IFT2255	1234567	James	Bob	James@hotmail.fr
