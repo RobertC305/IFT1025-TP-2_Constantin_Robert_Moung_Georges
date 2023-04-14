@@ -1,5 +1,6 @@
 package Controller;
 
+import javafx.scene.control.Alert;
 import server.models.Client;
 import server.models.Course;
 import server.models.RegistrationForm;
@@ -50,6 +51,22 @@ public class Controller {
 		String email = this.view.getEmailTextField().getText().toString();
 		Course course = selectedCourse;
 
+		//Vérifier si les valeurs entrées sont valides
+		if ( prenom.equals("") || nom.equals("") ) {
+			messageAlerte("Erreur","Veuillez entrer votre prénom et votre nom.");
+			return;
+		} else if (this.client.emailValide(email) != true) {
+			messageAlerte("Erreur","L'adresse courriel entrée est invalide! Veuillez réessayer.");
+			return;
+		} else if (this.client.matriculeValide(matricule) == false) {
+			messageAlerte("Erreur","La matricule entrée est invalide!"+
+					"\nCela doit être un nombre de 8 caractères.\nVeuillez réessayer.");
+			return;
+		} else if (course == null) {
+			messageAlerte("Erreur","Veuillez sélectionner un cours.");
+			return;
+		}
+
 		RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,course);
 		try{
 		Client.inscrire(registrationForm);
@@ -57,6 +74,9 @@ public class Controller {
 		}
 		catch (IOException e){throw new RuntimeException(e);}
 		catch (ClassNotFoundException e){throw new RuntimeException(e);}
+
+		//Affiche un message de confirmation de l'inscription
+		messageAlerte("Inscription",Client.getReponseServeur());
 
 	}
 
@@ -103,5 +123,20 @@ public class Controller {
 		this.view.clearSessionComboBox();
 		this.view.clearTable();
 	}
+
+
+	/**
+	 * Cette méthode prend affiche un message d'erreur du style "Information".
+	 * @param title Titre du message d'erreur
+	 * @param contentText Contenu du message d'erreur
+	 */
+	public static void messageAlerte(String title, String contentText){
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle(title);
+		alert.setHeaderText(null);
+		alert.setContentText(contentText);
+		alert.showAndWait();
+	}
+
 
 }

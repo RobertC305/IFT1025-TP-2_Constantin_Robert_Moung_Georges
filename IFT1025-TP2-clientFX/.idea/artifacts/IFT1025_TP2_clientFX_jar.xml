@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IFT1025-TP2-clientFX:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IFT1025_TP2_clientFX_jar</output-path>
+    <root id="archive" name="IFT1025-TP2-clientFX.jar">
+      <element id="module-output" name="IFT1025-TP2-clientFX" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/19/javafx-graphics-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/19/javafx-fxml-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/19/javafx-controls-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/19/javafx-base-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/19/javafx-controls-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/19/javafx-base-19-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/19/javafx-fxml-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/rt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/jce.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/jfr.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/jsse.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/deploy.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/javaws.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/jfxswt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/plugin.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/charsets.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/resources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../../../../../Program Files/Java/jre1.8.0_361/lib/management-agent.jar" path-in-jar="/" />
+      <element id="library" level="module" name="JavaFX" module-name="IFT1025-TP2-clientFX" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/19/javafx-graphics-19-win.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
