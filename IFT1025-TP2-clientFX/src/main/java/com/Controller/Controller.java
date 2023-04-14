@@ -1,10 +1,10 @@
-package Controller;
+package com.Controller;
 
 import javafx.scene.control.Alert;
 import server.models.Client;
 import server.models.Course;
 import server.models.RegistrationForm;
-import View.View;
+import com.View.View;
 import javafx.scene.control.TableView;
 import java.io.IOException;
 

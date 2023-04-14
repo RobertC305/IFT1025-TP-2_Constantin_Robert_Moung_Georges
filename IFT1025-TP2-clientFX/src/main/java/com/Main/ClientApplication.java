@@ -1,8 +1,8 @@
-package Main;
+package com.Main;
 
-import Controller.Controller;
+import com.Controller.Controller;
 import server.models.Client;
-import View.View;
+import com.View.View;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

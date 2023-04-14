@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="IFT1025-TP2-clientFX:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef19bb0-7a8c-4a05-8493-8ad769086083" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/IFT1025_TP2_clientFX_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-    </list>
+    <list default="true" id="bef19bb0-7a8c-4a05-8493-8ad769086083" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,36 +43,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/rober/OneDrive/Bureau/Udem - Informatique/IFT1025/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.46091953",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rober/OneDrive/Bureau/Udem - Informatique/IFT1025/openjfx-20_windows-x64_bin-sdk/javafx-sdk-20&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.46091953&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Universite\U_Hiver2023\IFT1025\TP2\IFT1025-TP-2_Constantin_Robert_Moung_Georges\IFT1025-TP2-clientFX\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Universite\U_Hiver2023\IFT1025\TP2\IFT1025-TP-2_Constantin_Robert_Moung_Georges\IFT1025-TP2-clientFX\src\main\java" />
+      <recent name="C:\Users\admin\Documents\Universite\U_Hiver2023\IFT1025\TP2\IFT1025-TP-2_Constantin_Robert_Moung_Georges\IFT1025-TP2-clientFX\src\main\java\com" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApplication">
-    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.ClientApplication" />
-      <module name="IFT1025-TP2-clientFX" />
-      <option name="PROGRAM_PARAMETERS" value="--module-path /path/to/JavaFX/lib --add-modules=javafx.controls" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.com.Main.ClientApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.ift1025tp2clientfx.HelloApplication" />
       <module name="IFT1025-TP2-clientFX" />
@@ -86,13 +82,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.Main.ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.Main.ClientApplication" />
+      <module name="IFT1025-TP2-clientFX" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.ClientApplication" />
+      <item itemvalue="Application.com.Main.ClientApplication" />
       <item itemvalue="Application.HelloApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApplication" />
+        <item itemvalue="Application.com.Main.ClientApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
