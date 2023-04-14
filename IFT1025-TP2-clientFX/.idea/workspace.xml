@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef19bb0-7a8c-4a05-8493-8ad769086083" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/classes/artifacts/Server_jar/Server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bef19bb0-7a8c-4a05-8493-8ad769086083" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,13 +68,23 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.Main.ClientApplication">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.ift1025tp2clientfx.HelloApplication" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.Main.ClientApplication" />
+      <module name="IFT1025-TP2-clientFX" />
+      <option name="VM_PARAMETERS" value="--module-path=&quot;&lt;javafx-root&gt;\lib&quot; --add-modules=&quot;javafx.base,javafx.controls,javafx.fxml&quot; " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Main.Main" />
       <module name="IFT1025-TP2-clientFX" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.ift1025tp2clientfx.*" />
+          <option name="PATTERN" value="com.Main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,23 +92,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.Main.ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.Main.ClientApplication" />
-      <module name="IFT1025-TP2-clientFX" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.com.Main.ClientApplication" />
-      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.ClientApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.Main.ClientApplication" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ClientApplication" />
       </list>
     </recent_temporary>
   </component>
