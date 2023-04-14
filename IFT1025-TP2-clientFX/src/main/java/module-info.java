@@ -1,9 +1,9 @@
-module com.example.ift1025tp2clientfx {
+module com {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.ift1025tp2clientfx to javafx.fxml;
+    opens com.Main to javafx.fxml;
     opens server.models to javafx.base;
-    exports Main;
+    exports com.Main;
 }

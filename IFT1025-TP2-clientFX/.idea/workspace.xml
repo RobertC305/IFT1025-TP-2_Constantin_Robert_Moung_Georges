@@ -60,19 +60,15 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Universite\U_Hiver2023\IFT1025\TP2\IFT1025-TP-2_Constantin_Robert_Moung_Georges\IFT1025-TP2-clientFX\src\main\java" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Universite\U_Hiver2023\IFT1025\TP2\IFT1025-TP-2_Constantin_Robert_Moung_Georges\IFT1025-TP2-clientFX\src\main\java" />
+      <recent name="C:\Users\admin\Documents\Universite\U_Hiver2023\IFT1025\TP2\IFT1025-TP-2_Constantin_Robert_Moung_Georges\IFT1025-TP2-clientFX\src\main\java\com" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientApplication">
-    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.ClientApplication" />
-      <module name="IFT1025-TP2-clientFX" />
-      <option name="PROGRAM_PARAMETERS" value="--module-path /path/to/JavaFX/lib --add-modules=javafx.controls" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.com.Main.ClientApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.ift1025tp2clientfx.HelloApplication" />
       <module name="IFT1025-TP2-clientFX" />
@@ -86,13 +82,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.Main.ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.Main.ClientApplication" />
+      <module name="IFT1025-TP2-clientFX" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.ClientApplication" />
+      <item itemvalue="Application.com.Main.ClientApplication" />
       <item itemvalue="Application.HelloApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApplication" />
+        <item itemvalue="Application.com.Main.ClientApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
