@@ -95,14 +95,16 @@ public class Server {
         // TODO: implémenter cette méthode
 
         //Affichage pour confirmer la reception de la commande
+
         System.out.println("J'ai recu l'instruction: CHARGER");
         System.out.println("Argument recu:"+ arg);
 
         //Lecture du document cours.txt
-        //À noter que le package Scanner a été ajouté
 
         try {
-            Scanner reader = new Scanner(new File(".\\src\\main\\java\\server\\data\\cours.txt"));
+            //On va supposer que notre fichier .jar sera dans le même dossier que nos fichiers .txt
+            //Scanner reader = new Scanner(new File(".\\src\\main\\java\\server\\data\\cours.txt"));
+            Scanner reader = new Scanner(new File("cours.txt"));
                 ArrayList<Course> courses = new ArrayList<>();
                 while (reader.hasNext()) {
                     String courseCode = reader.next();
@@ -127,7 +129,7 @@ public class Server {
             
 
         } catch (FileNotFoundException e) {
-            System.out.println("Fichier non trouvé");
+            System.out.println("Fichier cours.txt non trouvé");
         } catch (RuntimeException e) {
             //Aucune intervention requise, car le client s'est déconnecté. Il faut juste poursuivre la methode run()
         } catch (IOException e) {
@@ -146,59 +148,51 @@ public class Server {
 
         boolean registrationSucces = true;
 
-
         try {
-
             //Réception de l'objet de type RegistrationForm
             RegistrationForm registrationForm = (RegistrationForm) this.objectInputStream.readObject();
 
             //Enregistrement des données du RegistrationForm sur le fichier inscription.txt
-            FileWriter fileWriter = new FileWriter(".\\src\\main\\java\\server\\data\\inscription.txt",true);
+            //On va supposer que notre fichier .jar sera dans le même dossier que nos fichiers .txt
+            //FileWriter fileWriter = new FileWriter(".\\src\\main\\java\\server\\data\\inscription.txt",true);
+            FileWriter fileWriter = new FileWriter("inscription.txt",true);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             String registrationString = registrationForm.getCourse().getSession() + "\t" + registrationForm.getCourse().getCode() + "\t" +
                     registrationForm.getMatricule() + "\t" + registrationForm.getPrenom() + "\t" + registrationForm.getNom() + "\t" + registrationForm.getEmail()+"\n";
             writer.append(registrationString);
             writer.close();
-            handleRegistrationSuccess(registrationForm);
+
+            //Succès de l'inscription
+            objectOutputStream.writeObject("Félicitations! Inscription réussie de " + registrationForm.getPrenom() + " au cours " + registrationForm.getCourse().getCode());
+            objectOutputStream.flush();
 
         } catch (FileNotFoundException e){
             System.out.println("Fichier inscription.txt non trouvé");
-            handleRegistrationFailure();
+            try {
+                objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
         } catch (IOException e) {
             System.out.println("Erreur lors de la réception ou de l'envoie de données stream");
-            handleRegistrationFailure();
+            try {
+                objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         } catch (ClassNotFoundException e) {
             System.out.println("Classe reçue en stream est introuvable");
-            handleRegistrationFailure();
+            try {
+                objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 
-    /**
-     * La méthode envoie un message au client pour confirmer la réussite de l'inscription
-     * @param registrationForm le formulaire d'inscription du client
-     * @throws IOException
-     */
-    public void handleRegistrationSuccess(RegistrationForm registrationForm){
-        try {
-            objectOutputStream.writeObject("Félicitations! Inscription réussie de " + registrationForm.getPrenom() + " au cours " + registrationForm.getCourse().getCode());
-            objectOutputStream.flush();
-        }catch(IOException e){
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    /**
-     * La méthode envoie un message au client pour l'informer de l'échec de son inscription
-     * @throws IOException
-     */
-    public void handleRegistrationFailure(){
-        try {
-            objectOutputStream.writeObject("L'inscription a échoué. Veuillez réessayer ou nous contacter si le problème persiste.");
-            objectOutputStream.flush();
-        }catch(IOException e){
-            throw new RuntimeException(e);
-        }
-    }
 }
 

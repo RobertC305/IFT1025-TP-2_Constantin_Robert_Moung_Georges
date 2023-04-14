@@ -25,3 +25,4 @@ Hiver	IFT2125	12345678	Test	Tesson	test@test.ca
 Hiver	IFT2125	12345678	test	G	test@umontreal.ca
 Automne	IFT2255	12345678	geo	mou	mou@ho.fr
 Hiver	IFT2125	12345678	Finalement	ca	fonctionne@yes.com
+Hiver	IFT2125	87654321	Old	Spice	OldSpice@umontreal.ca

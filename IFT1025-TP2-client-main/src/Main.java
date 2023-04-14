@@ -40,7 +40,6 @@ public class Main {
                 commande = redemanderSiInvalide(commande(line), new String[]{"1", "2","exit"},scanner);
                 ifExitDisconnect(commande);
 
-                //Changer pour un while pour que la boucle soit lue tant que l'option 1 est choisie
                 if (commande.equals("1")) {
                     while (true) {
                         messageChoixCours();
@@ -48,9 +47,7 @@ public class Main {
                         commande = redemanderSiInvalide(commande(line), new String[]{"1", "2", "3","exit"},scanner);
                         ifExitDisconnect(commande);
 
-                        //client.charger(commande);
                         charger(commande);
-
 
                         messageChoixApresCharger();
                         line = scanner.nextLine();
@@ -60,7 +57,6 @@ public class Main {
                         if (commande.equals("1") != true) {
                             break;
                         }
-
                     }
                 }
                 if (commande.equals("2")){
@@ -103,6 +99,7 @@ public class Main {
                     System.out.print("Veuillez saisir votre matricule: ");
                     String matricule = scanner.nextLine();
                     ifExitDisconnect(matricule);
+
                     //Vérifier si valide
                     while (matriculeValide(matricule) == false) {
                         System.out.println("Matricule invalide");
@@ -114,14 +111,13 @@ public class Main {
                     System.out.print("Veuillez saisir le code du cours: ");
                     String code = scanner.nextLine();
                     ifExitDisconnect(code);
-                    //Vérifier si valide
 
+                    //Vérifier si valide
                     while(coursCodeValide(code,listCoursesConsulted) != true){
                         System.out.println("Code invalide");
                         System.out.print("Veuillez saisir le code du cours: ");
                         code = scanner.nextLine();
                         ifExitDisconnect(code);
-
 
                     }
 
@@ -134,16 +130,13 @@ public class Main {
                     }
 
                     //Reconnection du client pour la deuxième commande
-
                     RegistrationForm registrationForm = new RegistrationForm(prenom,nom,email,matricule,coursInscription);
                     inscrire(registrationForm);
 
                 }
             }
 
-
             scanner.close();
-
 
         } catch (ConnectException x) {
             System.out.println("Connexion impossible sur port 1337: pas de serveur.");
@@ -288,15 +281,17 @@ public class Main {
         if (numSession.equals("1")) {
             session = "Automne";
             objectOutputStream.writeObject("CHARGER "+session);
-            //System.out.println("J'ai envoye CHARGER "+session);
+
         } else if (numSession.equals("2")) {
+
             session = "Hiver";
             objectOutputStream.writeObject("CHARGER "+session);
-            //System.out.println("J'ai envoye CHARGER "+session);
+
         } else if (numSession.equals("3")) {
+
             session = "Ete";
             objectOutputStream.writeObject("CHARGER "+session);
-            //System.out.println("J'ai envoye CHARGER "+session);
+
         } else {
             IllegalArgumentException exception;
             exception = new IllegalArgumentException("Le numéro de session doit être entre 1 ou 3 ");
@@ -321,7 +316,7 @@ public class Main {
     }
 
     /**
-     * Cette methode envoie un objet RegistrationForm au serveur localhost sur le port 1337. Il se connecte au serveur.
+     * Cette methode envoie un objet RegistrationForm au serveur localhost sur le port 1337. Il se connecte au serveur,
      * envoie la commande et se déconnecte.
      * @param registrationForm Objet de format RegistrationForm à envoyer au serveur.
      * @throws IOException
