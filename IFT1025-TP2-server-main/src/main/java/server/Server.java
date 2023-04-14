@@ -94,11 +94,6 @@ public class Server {
     public void handleLoadCourses(String arg) {
         // TODO: implémenter cette méthode
 
-        //Affichage pour confirmer la reception de la commande
-
-        System.out.println("J'ai recu l'instruction: CHARGER");
-        System.out.println("Argument recu:"+ arg);
-
         //Lecture du document cours.txt
 
         try {
@@ -123,7 +118,6 @@ public class Server {
             }
 
             //Envoyer le résultat au client avec un OutputStream
-            System.out.println("J'ai envoyé "+filteredCourses );
             objectOutputStream.writeObject(filteredCourses);
             objectOutputStream.flush();
             
@@ -144,8 +138,6 @@ public class Server {
      */
     public void handleRegistration() {
         // TODO: implémenter cette méthode
-        System.out.println("J'ai recu l'instruction: INSCRIRE");
-
         boolean registrationSucces = true;
 
         try {
