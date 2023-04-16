@@ -10,11 +10,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bef19bb0-7a8c-4a05-8493-8ad769086083" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Controller/Controller.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Controller/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Controller/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Main/ClientApplication.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Main/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Main/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/Main/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/View/View.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/View/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/com/View/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/module-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/server/models/Client.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/server/models/Course.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/server/models/RegistrationForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/server/models/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/com/server/models/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/copy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/jquery-ui.overrides.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/legal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/legal/jquery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/legal/jqueryUI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/module-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/script-dir/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/search-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/tag-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/client/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/artifacts/IFT1025_TP2_client_main_jar/IFT1025-TP2-client-main.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/artifacts/IFT1025_TP2_client_main_jar/IFT1025-TP2-client-main.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/server/models/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/server/models/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/server/models/RegistrationForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-client-main/out/production/IFT1025-TP2-client-main/server/models/RegistrationForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Main/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Main/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/View/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/models/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/models/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/models/RegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/models/RegistrationForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/classes/artifacts/Server_jar/Server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/classes/artifacts/Server_jar/Server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/AppTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/AppTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/EventHandler.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/EventHandler.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/Server.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/Server.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/ServerLauncher.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/ServerLauncher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/Course.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/Course.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/RegistrationForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/RegistrationForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/models/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/javadoc/serveur/server/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IFT1025-TP2-server-main/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../IFT1025-TP2-server-main/src/main/java/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

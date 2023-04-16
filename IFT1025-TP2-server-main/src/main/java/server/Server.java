@@ -54,7 +54,7 @@ public class Server {
      * Constructeur de la classe qui crée le serveur la machine locale (localhost) sur le port spécifié en
      * paramètre et initie la liste des "event handlers".
      * @param port Port sur lequel démarrer le serveur
-     * @throws IOException
+     * @throws IOException Erreur d’entrée/sortie en général
      */
     public Server(int port) throws IOException {
         this.server = new ServerSocket(port, 1);
@@ -105,8 +105,8 @@ public class Server {
     /**
      *Cette méthode reçoit une commande envoyer par le client sous forme d'objet.
      * Puis, elle extrait, de cet objet, la commande et l'argument et les renvoie aux "handlers".
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * @throws IOException  Erreur d’entrée/sortie en général
+     * @throws ClassNotFoundException Erreur classe introuvable
      */
     public void listen() throws IOException, ClassNotFoundException {
         String line;
@@ -133,7 +133,7 @@ public class Server {
 
     /**
      * Cette méthode se déconnecte du client et ferme les Input/Output Stream.
-     * @throws IOException
+     * @throws IOException Erreur d’entrée/sortie en général
      */
     public void disconnect() throws IOException {
         objectOutputStream.close();

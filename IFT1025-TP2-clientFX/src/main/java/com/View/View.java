@@ -242,16 +242,19 @@ public class View extends HBox {
 	 */
 
 	/**
+	 * Getter de la table qui contient la liste des cours
 	 * @return TableView: retourne la table qui contient la liste de cours.
 	 */
 	public TableView getCourseTable(){return this.courseTable;}
 
 	/**
+	 * Getter du ComboBoc qui contient la liste des sessions
 	 * @return ComboBox: retourne le ComboBox qui contient la liste des sessions
 	 */
 	public ComboBox getSessionComboBox() {return sessionComboBox;}
 
 	/**
+	 * Getter du bouton qui permet de charger les cours de la session choisie
 	 * @return Button: retourne le bouton qui permet de charger les cours de la session choisie.
 	 */
 	public Button getSessionConfirmationButton() {return sessionConfirmationButton;}
@@ -263,26 +266,31 @@ public class View extends HBox {
 	 */
 
 	/**
-	 * @return TextField: retourne le champ de texte qui contient le prenom.
+	 * Getter du champ de texte qui contient le prénom
+	 * @return TextField: retourne le champ de texte qui contient le prénom.
 	 */
 	public TextField getPrenomTextField() {return prenomTextField;}
 
 	/**
+	 * Getter du champ de texte qui contient le nom
 	 * @return TextField: retourne le champ de texte qui contient le nom.
 	 */
 	public TextField getNomTextField() {return nomTextField;}
 
 	/**
-	 * @return TextField: retourne le champ de texte qui contient l'émail.
+	 * Getter du champ de texte qui contient l'email
+	 * @return TextField: retourne le champ de texte qui contient l'email.
 	 */
 	public TextField getEmailTextField() {return emailTextField;}
 
 	/**
+	 * Getter du champ de texte qui contient le matricule
 	 * @return TextField: retourne le champ de texte qui contient le matricule.
 	 */
 	public TextField getMatriculeTextField() {return matriculeTextField;}
 
 	/**
+	 * Getter du bouton qui envoie les données rentrées au serveur afin de s'inscrire
 	 * @return Button: retourne le bouton qui envoie les données rentrées au serveur afin de s'inscrire.
 	 */
 	public Button getRegistrationConfirmationButton() {return registrationConfirmationButton;}

@@ -50,6 +50,7 @@ public class Client {
     //Début des Getters
 
     /**
+     * Getter de la liste des cours consultés
      * @return tableau qui contient la liste de cours de la session choisie.
      */
     public ArrayList<Course> getListCoursesConsulted() {
@@ -57,6 +58,7 @@ public class Client {
     }
 
     /**
+     * Getter de la réponse du serveur
      * @return Chaîne de caractères qui contient la réponse du serveur
      */
     public static String getReponseServeur() {
@@ -139,7 +141,7 @@ public class Client {
     /**
      * Cette méthode valide que le code fourni en paramètre est dans la liste de cours fournie en paramètre.
      * @param codeToValidate Code à valider (String)
-     * @param CourseList Liste de cours valides (ArrayList<Course>)
+     * @param CourseList Liste de cours valides
      * @return "true" si valide, "false" sinon
      */
     public static boolean coursCodeValide(String codeToValidate, ArrayList<Course> CourseList){
@@ -153,9 +155,10 @@ public class Client {
 
     /**
      * Cette méthode se connecte au serveur localhost sur le port 1337, envoie la commande "CHARGER session" au serveur,
-     * àaffiche les cours disponibles pour la session reçu du serveur et se déconnecte par la suite.
+     * à afficher les cours disponibles pour la session reçu du serveur et se déconnecte par la suite.
      * @param session (1=Automne, 2=Hiver, 3 = Ete)
-     * @throws IOException
+     * @throws IOException Erreur d’entrée/sortie en général
+     * @throws ClassNotFoundException Erreur classe introuvable
      */
     public static void charger(String session) throws IOException, ClassNotFoundException {
         Socket socket = new Socket("127.0.0.1", 1337);
@@ -176,8 +179,8 @@ public class Client {
      * Cette methode envoie un objet RegistrationForm au serveur localhost sur le port 1337. Il se connecte au serveur.
      * envoie la commande et se déconnecte.
      * @param registrationForm Objet de format RegistrationForm à envoyer au serveur.
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * @throws IOException Erreur d’entrée/sortie en général
+     * @throws ClassNotFoundException Erreur classe introuvable
      */
     public static void inscrire(RegistrationForm registrationForm) throws IOException, ClassNotFoundException {
         Socket socket = new Socket(ipAdress, port);

@@ -13,9 +13,9 @@ import javafx.stage.Stage;
 public class ClientApplication extends Application {
 
     /**
-     * Méthode qui affiche l'inface graphique.
+     * Méthode qui affiche l'interface graphique.
      * @param stage Stage de l'application.
-     * @throws Exception
+     * @throws Exception Erreur générale
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -31,7 +31,7 @@ public class ClientApplication extends Application {
     }
 
     /**
-     * Méthode Main de de la classe qui appelle la méthode "Stat" de la classe.
+     * Méthode Main de la classe qui appelle la méthode "Stat" de la classe.
      * @param args Arguments reçus.
      */
     public static void main(String[] args) {
