@@ -12,6 +12,11 @@ import javafx.stage.Stage;
  */
 public class ClientApplication extends Application {
 
+    /**
+     * Méthode qui affiche l'inface graphique.
+     * @param stage Stage de l'application.
+     * @throws Exception
+     */
     @Override
     public void start(Stage stage) throws Exception {
         View view = new View();
@@ -25,6 +30,10 @@ public class ClientApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Méthode Main de de la classe qui appelle la méthode "Stat" de la classe.
+     * @param args Arguments reçus.
+     */
     public static void main(String[] args) {
         launch(args);
     }

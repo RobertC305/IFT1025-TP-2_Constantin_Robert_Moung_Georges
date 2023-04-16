@@ -3,7 +3,7 @@ package server.models;
 import java.io.Serializable;
 
 /**
- * Cours
+ * Classe du Cours suivi.
  */
 public class Course implements Serializable {
 

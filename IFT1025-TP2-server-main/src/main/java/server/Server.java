@@ -66,7 +66,6 @@ public class Server {
      * Cette méthode ajoute un "event handler" à la liste des "event handlers" du serveur.
      * @param h Event handler à ajouter.
      */
-
     public void addEventHandler(EventHandler h) {
         this.handlers.add(h);
     }
@@ -76,7 +75,6 @@ public class Server {
      * @param cmd Commande
      * @param arg Arguments
      */
-
     private void alertHandlers(String cmd, String arg) {
         for (EventHandler h : this.handlers) {
             h.handle(cmd, arg);
@@ -84,10 +82,10 @@ public class Server {
     }
 
     /**
-     * Cette méthode démarre le serveur, établit une communication lecture/écriture avec le client qui s'y connecte et
-     * s'y déconnecte lorsque l'instruction a été complétée. Le serveur reste en attente d'une connection indéfiniment.
+     * Cette méthode démarre le serveur, établit une communication lecture/écriture
+     * avec le client qui s'y connecte et s'y déconnecte lorsque l'instruction a été complétée.
+     * Le serveur reste en attente d'une connection indéfiniment.
      */
-
     public void run() {
         while (true) {
             try {
@@ -105,7 +103,8 @@ public class Server {
     }
 
     /**
-     *Cette méthode lit un objet reçu, le sépare en commande et argument, et le renvoie aux "handlers"
+     *Cette méthode reçoit une commande envoyer par le client sous forme d'objet.
+     * Puis, elle extrait, de cet objet, la commande et l'argument et les renvoie aux "handlers".
      * @throws IOException
      * @throws ClassNotFoundException
      */
@@ -125,7 +124,6 @@ public class Server {
      * @param line Ligne de commande
      * @return Paire commande/arguments sous forme
      */
-
     public Pair<String, String> processCommandLine(String line) {
         String[] parts = line.split(" ");
         String cmd = parts[0];
@@ -137,7 +135,6 @@ public class Server {
      * Cette méthode se déconnecte du client et ferme les Input/Output Stream.
      * @throws IOException
      */
-
     public void disconnect() throws IOException {
         objectOutputStream.close();
         objectInputStream.close();
@@ -158,11 +155,11 @@ public class Server {
     }
 
     /**
-     Lire un fichier texte contenant des informations sur les cours et les transformer en liste d'objets 'Course'.
-     La méthode filtre les cours par la session spécifiée en argument.
-     Ensuite, elle renvoie la liste des cours pour une session au client en utilisant l'objet 'objectOutputStream'.
-     La méthode gère les exceptions si une erreur se produit lors de la lecture du fichier ou de l'écriture de l'objet dans le flux.
-     @param arg la session pour laquelle on veut récupérer la liste des cours
+     *Lire un fichier texte contenant des informations sur les cours et les transformer en liste d'objets 'Course'.
+     *La méthode filtre les cours par la session spécifiée en argument.
+     *Ensuite, elle renvoie la liste des cours pour une session au client en utilisant l'objet 'objectOutputStream'.
+     *La méthode gère les exceptions si une erreur se produit lors de la lecture du fichier ou de l'écriture de l'objet dans le flux.
+     *@param arg la session pour laquelle on veut récupérer la liste des cours
      */
     public void handleLoadCourses(String arg) {
         // TODO: implémenter cette méthode
@@ -205,9 +202,10 @@ public class Server {
     }
 
     /**
-     Récupérer l'objet 'RegistrationForm' envoyé par le client en utilisant 'objectInputStream', l'enregistrer dans un fichier texte
-     et renvoyer un message de confirmation au client.
-     La méthode gére les exceptions si une erreur se produit lors de la lecture de l'objet, l'écriture dans un fichier ou dans le flux de sortie.
+     *Récupérer l'objet 'RegistrationForm' envoyé par le client en utilisant 'objectInputStream',
+     *l'enregistrer dans un fichier texte et renvoyer un message de confirmation au client.
+     *La méthode gére les exceptions si une erreur se produit lors de la lecture de l'objet,
+     *l'écriture dans un fichier ou dans le flux de sortie.
      */
     public void handleRegistration() {
         // TODO: implémenter cette méthode

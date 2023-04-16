@@ -11,10 +11,20 @@ import java.util.regex.Pattern;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * Classe principale du Client qui contient la méthode Main et qui se envoie des commandes à un serveur.
+ */
 public class Main {
 
+    /**
+     * Tableau contenant la liste de cours d'une session.
+     */
     private static ArrayList<Course> listCoursesConsulted = new ArrayList<>();
 
+    /**
+     * Méthode Main de l'application client.
+     * @param args Arguments reçus au lancement de l'application.
+     */
     public static void main(String[] args) {
 
         try {

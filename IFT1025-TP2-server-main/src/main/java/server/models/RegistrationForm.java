@@ -3,31 +3,31 @@ package server.models;
 import java.io.Serializable;
 
 /**
- * Formulaire d'inscription
+ * Classe du formulaire d'inscription.
  */
 public class RegistrationForm implements Serializable {
     /**
-     * Prénom de l'étudiant
+     * Prénom de l'étudiant.
      */
     private String prenom;
 
     /**
-     * Nom de l'étudiant
+     * Nom de l'étudiant.
      */
     private String nom;
 
     /**
-     * Email de l'étudiant
+     * Email de l'étudiant.
      */
     private String email;
 
     /**
-     * Matricule de l'étudiant
+     * Matricule de l'étudiant.
      */
     private String matricule;
 
     /**
-     * Cours auquel l'étudiant s'inscrit
+     * Cours auquel l'étudiant s'inscrit.
      */
     private Course course;
 

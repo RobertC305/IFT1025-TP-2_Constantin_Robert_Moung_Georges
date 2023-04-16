@@ -1,7 +1,7 @@
 package server;
 
 /**
- * Cette classe contient la méthode Main et démarre un serveur sur un port défini.
+ * Classe qui contient la méthode Main et démarre un serveur sur un port défini.
  */
 public class ServerLauncher {
     /**

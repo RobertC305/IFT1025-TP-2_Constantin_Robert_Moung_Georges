@@ -13,10 +13,24 @@ import java.io.IOException;
  */
 public class Controller {
 
+	/**
+	 * Le client.
+	 */
 	private Client client;
+	/**
+	 * La vue.
+	 */
 	private View view;
+	/**
+	 * Le cours sélectionner dans la table de la liste de cours.
+	 */
 	private Course selectedCourse = null;
 
+	/**
+	 * Constructeur
+	 * @param client Le client.
+	 * @param view La vue de l'appliii.
+	 */
 	public Controller(Client client, View view) {
 
 		this.client = client;

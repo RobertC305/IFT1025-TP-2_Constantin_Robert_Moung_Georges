@@ -19,63 +19,134 @@ import javafx.scene.text.Text;
  */
 public class View extends HBox {
 
-	/*
-	 * Éléments dedu coté gauche de la scene (la liste de cours).
-	 *
+	//Éléments du coté gauche de la scene (la liste de cours).
+	/**
+	 * Conteneur parent de la section liste de cours.
 	 */
 	private VBox courseVBox = new VBox(250); //Contient tous les éléments de la partie : liste de cours
 
-	//Titre
+	/**
+	 * Titre de la section "liste de cours"
+	 */
 	private Text courseTitle = new Text("Liste des cours");
 
-	//Table de la liste de cours
+	/**
+	 * Table qui affiche les cours de la session choisie.
+	 */
 	private TableView<Course> courseTable = new TableView();
+	/**
+	 * Colonne "code" de la table "courseTable".
+	 */
 	private TableColumn<Course, String> courseCodeTableCol = new TableColumn<Course, String>("Code");
+	/**
+	 * Colonne "cours" de la table "courseTable".
+	 */
 	private TableColumn<Course, String> courseNameTableCol = new TableColumn<Course, String>("Cours");
-	private ObservableList<Course> loadedCourses = FXCollections.observableArrayList(); //Contient les cours récupérer du serveur
+	/**
+	 * Liste Observable pour la table "courseTable".
+	 * Elle contient la liste de cours envoyer par le serveur.
+	 */
+	private ObservableList<Course> loadedCourses = FXCollections.observableArrayList();
 
 	//Bas de page de la partie: liste de cours
-	private HBox courseSessionHBox = new HBox(); //Contient le ComboBox pour la session et le bouton charger
+	/**
+	 * Conteneur enfant du conteneur "courseVBox".
+	 * Il contient le comboBox pour le choix de la session et
+	 * le bouton qui permet de charger la liste de cours de la session choisie.
+	 */
+	private HBox courseSessionHBox = new HBox();
+	/**
+	 * Permet de choisir la session.
+	 */
 	private ComboBox sessionComboBox = new ComboBox();
+	/**
+	 * Bouton pour charger la liste de cours de la session choisie.
+	 */
 	private  Button sessionConfirmationButton = new Button("charger");
 
 
-	/*
-	 * Éléments du coté droit de la scene (Formulaire d'inscription).
-	 *
+	//Éléments du coté droit de la scene (Formulaire d'inscription).
+	/**
+	 * Conteneur parent de la section formulaire d'inscription.
 	 */
 	private VBox registrationVBox = new VBox(250);
 
-	//Titre
+	/**
+	 * Titre du formulaire d'inscription
+	 */
 	private Text registrationTitle = new Text("Formulaire d'inscription");
 
-	//Formulaire d'inscription
+	/**
+	 * Conteneur enfant de registrationVBox qui contient
+	 * les éléments à remplire dans le formulaire d'inscription.
+	 */
 	private VBox registrationFieldsVBox = new VBox(); //Contient les éléments du formulaire d'inscriptions
 
 	//Prenom
+	/**
+	 * Conteneur du prénom.
+	 */
 	private HBox prenomHBOx = new HBox();
+	/**
+	 * Étiquette du prénom.
+	 */
 	private Label prenomLabel = new Label("Prénom");
+	/**
+	 * Champs de texte du prénom.
+	 */
 	private TextField prenomTextField = new TextField();
 
 	//Nom
+	/**
+	 * Conteneur du nom.
+	 */
 	private HBox nomHBOx = new HBox();
+	/**
+	 * Étiquette du nom.
+	 */
 	private Label nomLabel = new Label("Nom");
+	/**
+	 * Champs de texte du nom.
+	 */
 	private TextField nomTextField = new TextField();
 
 	//Email
+	/**
+	 * Conteneur de l'adresse courrielle.'
+	 */
 	private HBox emailHBOx = new HBox();
+	/**
+	 * Étiquette de l'adresse courielle.
+	 */
 	private Label emailLabel = new Label("Email");
+	/**
+	 * Champs de texte de l'adresse courrielle.
+	 */
 	private TextField emailTextField = new TextField();
 
 	//Matricule
+	/**
+	 * Conteneur du matricule.
+	 */
 	private HBox matriculeHBOx = new HBox();
+	/**
+	 * Étiquette du matricule.
+	 */
 	private Label matriculeLabel = new Label("Matricule");
+	/**
+	 * Champs de texte du matricule.
+	 */
 	private TextField matriculeTextField = new TextField();
 
 	//Bouton de confirmation
+	/**
+	 * Bouton pour envoyer le formulaire au serveur.
+	 */
 	private Button registrationConfirmationButton = new Button("envoyer");
 
-
+	/**
+	 * Police pour les titres de l'application.
+	 */
 	private Font titlesFont = Font.font("Verdana", FontWeight.BOLD, 15);
 
 
