@@ -22,7 +22,7 @@ public class Main {
     private static ArrayList<Course> listCoursesConsulted = new ArrayList<>();
 
     /**
-     * Méthode Main de l'application client.
+     * Méthode Main de l'application client. Affiche les instructions et résultats de la communication avec le serveur.
      * @param args Arguments reçus au lancement de l'application.
      */
     public static void main(String[] args) {

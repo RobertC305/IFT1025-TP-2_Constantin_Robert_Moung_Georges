@@ -9,13 +9,34 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class d'un client qui peut envoyer et interpréter les réponses du serveur.
+ */
 public class Client {
 
+    /**
+     * Socket du client
+     */
     private Socket client;
+
+    /**
+     * Port pour la connexion au serveur
+     */
     private static int port = 1337;
+
+    /**
+     * Adresse ip locale "Locahost"
+     */
     private static String ipAdress = "127.0.0.1";
 
+    /**
+     * Liste des cours consultés par l'utilisateur à travers le client
+     */
     private static ArrayList<Course> listCoursesConsulted = new ArrayList<>();
+
+    /**
+     * Réponse du serveur
+     */
     private static String reponseServeur = "";
 
 
